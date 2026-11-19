@@ -1,0 +1,24 @@
+{
+ "v": 1,
+ "base": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/blobs/",
+ "files": {
+  "app.css": "8dc7cd5ffd0013fac16ac52c23811bdc33f677c592d165e2ebded05940fd6a5a",
+  "app.js": "e1a3b307e1835d5a74c909b5294b54cd22d3d879e49d32ca2e04832ee30a03bd",
+  "index.html": "a39b1345581be975165aec65841ef2dee402a67c3e9d05d9a5c936c039baeaf7",
+  "phone.html": "7b1abd0fe5fd28c2665e037c547b38b17a7684cebe49ba51a65e15223de346d6",
+  "version.json": "9ab2253fc38981f5be9c25cf0a34b62cdf334652344bdef16b3d5dbc0b74f2f1",
+  "fonts/ibm-plex-sans-arabic-latin-600-normal.woff2": "63f4757271e403f7baec0862f284ffaa4560ea6096ba9fe8bc6e585ca656e724",
+  "fonts/ibm-plex-sans-arabic-latin-500-normal.woff2": "be6a3b2e37f3ad67aa822a55ce356d28c416331c97530a1ec076c2118240ca2d",
+  "fonts/readex-pro-latin-wght-normal.woff2": "7074eeb987a25349069ed5c784e204904b928f4c878e9c3c88d636c01081ae52",
+  "fonts/ibm-plex-sans-arabic-arabic-500-normal.woff2": "90aef64fea9794f232332e907d45810ab268d1a11721340025eba2a2cdb36d5c",
+  "fonts/readex-pro-arabic-wght-normal.woff2": "b5815b71c48e513b5e65eb281dd53e5d6a556d6dac511a5d2cd00d628850d5c4",
+  "fonts/ibm-plex-sans-arabic-latin-400-normal.woff2": "9ed8dcb02e6c7246de4c120295fafa39a7bb73085f4951a4524a07dc911069f2",
+  "fonts/ibm-plex-mono-latin-600-normal.woff2": "0d1f0b8d0722224e32e9f28261bdc86c79115be73444ae5eceb73976a1bcdf83",
+  "fonts/ibm-plex-mono-latin-500-normal.woff2": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22",
+  "fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2": "6010e7fd0dce5d527583951750728cbe3c895efbd16aa0f809ab8c824878c9d8",
+  "fonts/fonts.css": "da712c4fd6fdaa2ca3063cb827dd43440c580bf5e0ef0da3190fd0118633d201",
+  "fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2": "16734a5adb27b0f363e566cbbeacec480da0dc0baa19c8f0053251c2e2bc0eac",
+  "vendor/zxing.min.js": "d7cc8f69dd70bdcf3ac00c9ae572bf2acb9f4132ba379c72df842e4db918652d"
+ },
+ "sig": "mtnaEReYqPhdCN9dYy2GE2uHRs237bh4dvuZuCzWCLHfOCTd2fb818b3WENJnMB7tRf7CQ2BZvu5P3BAyn5Ng1dPWJfT6al76TbhtHpSzSVJInNBDxISxCUo3Oz/mwr28xqzBKu5pXILXrdpJ9qeGDyu1fIuckUdYZ813jwL6hKF4vxJMbmSm8FvibRgXwRSNG/Wh3pLz2qqGtXp2DfZOUUr5Z8y2DRPJb01XHQ1doNTvunhciAHNqGLPUg1Buz+qPPWFbiJUsFp5FqyYYgcuMZFeY69j3GnxpnEU6RhdUX1VAFOm0A3ti8L6+8eCwoLYjdaZbfgHv24Qq4S2jo3lQ=="
+}

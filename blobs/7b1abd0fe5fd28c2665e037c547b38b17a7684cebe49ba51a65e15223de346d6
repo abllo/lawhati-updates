@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>لوحتي</title>
+<style>
+:root{--bg:#0E1422;--card:#182033;--line:rgba(255,255,255,.12);--ink:#F5F6F8;--muted:rgba(245,246,248,.65);--accent:#E9C47E;--ok:#4CD3A0}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(120% 60% at 80% 0%,rgba(233,196,126,.18),transparent 60%),var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;min-height:100vh;padding:22px 16px 40px}
+h1{font-size:28px;margin:6px 0 18px;font-weight:700}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;margin-bottom:14px}
+.card h2{margin:0 0 10px;font-size:15px;color:var(--accent)}
+.row{display:flex;gap:8px}
+input,textarea{flex:1;min-width:0;font:inherit;font-size:17px;color:var(--ink);background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:14px;padding:12px 14px;outline:none}
+textarea{min-height:90px;resize:vertical;width:100%}
+button{font:inherit;font-size:16px;font-weight:600;border:0;border-radius:14px;padding:12px 18px;background:linear-gradient(180deg,#F3D69A,var(--accent));color:#1A1508}
+button.full{width:100%;margin-top:8px}
+.pick{display:flex;align-items:center;justify-content:center;gap:10px;border:1.5px dashed var(--line);border-radius:16px;padding:22px;color:var(--muted);font-size:16px}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px}
+.thumbs img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#fff;color:#111;border-radius:999px;padding:10px 20px;font-size:15px;opacity:0;transition:.25s;pointer-events:none}
+.toast.on{opacity:1}
+.bar{height:6px;border-radius:6px;background:rgba(255,255,255,.1);overflow:hidden;margin-top:10px;display:none}
+.bar i{display:block;height:100%;width:0;background:var(--ok);transition:width .2s}
+</style>
+</head>
+<body>
+<h1>إلى لوحتي</h1>
+<div class="card"><h2>صور لإطار الصور</h2>
+  <label class="pick"><input id="ph" type="file" accept="image/*" multiple hidden>اختر صور</label>
+  <div class="thumbs" id="th"></div><div class="bar" id="bar"><i></i></div>
+</div>
+<div class="card"><h2>رابط</h2><div class="row"><input id="ln" dir="ltr" placeholder="https://"><button data-t="link">أرسل</button></div></div>
+<div class="card"><h2>للمقاضي</h2><div class="row"><input id="sh" placeholder="حليب، خبز…"><button data-t="shop">أضف</button></div></div>
+<div class="card"><h2>رسالة</h2><textarea id="tx"></textarea><button class="full" data-t="text">أرسل</button></div>
+<div class="toast" id="toast"></div>
+<script>
+const K = new URLSearchParams(location.search).get('k') || '';
+const toast = (m) => { const t = document.getElementById('toast'); t.textContent = m; t.classList.add('on'); clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove('on'), 2200); };
+async function send(type, value) {
+  const r = await fetch('/api/send?k=' + encodeURIComponent(K), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ type, value }) });
+  if (!r.ok) throw new Error(r.status);
+}
+const field = { link: 'ln', shop: 'sh', text: 'tx' };
+document.querySelectorAll('button[data-t]').forEach((b) => b.addEventListener('click', async () => {
+  const t = b.dataset.t, el = document.getElementById(field[t]), v = el.value.trim();
+  if (!v) return;
+  try { if (t === 'shop') { for (const x of v.split(/[،,\n]/).map((s) => s.trim()).filter(Boolean)) await send('shop', x); } else await send(t, v); el.value = ''; toast('وصلت'); } catch { toast('ما وصلت، تأكد إنك على نفس الشبكة'); }
+}));
+function shrink(file) {
+  return new Promise((res) => {
+    const img = new Image(); img.onload = () => {
+      const k = Math.min(1, 2048 / Math.max(img.width, img.height)); const c = document.createElement('canvas');
+      c.width = Math.round(img.width * k); c.height = Math.round(img.height * k); c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      c.toBlob((b) => res(b || file), 'image/jpeg', 0.88); URL.revokeObjectURL(img.src);
+    }; img.onerror = () => res(file); img.src = URL.createObjectURL(file);
+  });
+}
+document.getElementById('ph').addEventListener('change', async (e) => {
+  const files = [...e.target.files]; if (!files.length) return;
+  const th = document.getElementById('th'), bar = document.getElementById('bar'), fill = bar.querySelector('i');
+  th.innerHTML = ''; bar.style.display = 'block'; let done = 0;
+  for (const f of files) {
+    const im = document.createElement('img'); im.src = URL.createObjectURL(f); th.appendChild(im);
+    try { const b = await shrink(f); const r = await fetch('/api/photo?k=' + encodeURIComponent(K), { method: 'POST', body: b }); if (!r.ok) throw 0; } catch { toast('تعذر رفع صورة'); }
+    done++; fill.style.width = (done / files.length * 100) + '%';
+  }
+  toast(files.length === 1 ? 'وصلت الصورة' : `وصلت ${files.length} صور`);
+  setTimeout(() => { bar.style.display = 'none'; fill.style.width = '0'; }, 1500);
+  e.target.value = '';
+});
+</script>
+</body>
+</html>

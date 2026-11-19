@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=auto">
+<title>لوحتي</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div id="themeBg" aria-hidden="true"></div>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div id="stars" aria-hidden="true"></div>
+<canvas id="clouds" aria-hidden="true"></canvas>
+<div class="vignette" aria-hidden="true"></div>
+
+<div class="app" id="app">
+  <aside class="timecol" id="timecol">
+    <div class="phase-row"><span class="phase" id="phase"></span><span class="batt" id="batt" hidden></span></div>
+    <div class="clock" id="clock" aria-live="off"><span id="hh">--</span><span class="colon">:</span><span id="mm">--</span><span class="ampm" id="ampm"></span></div>
+    <div class="dates">
+      <div class="date"><b id="dWeek"></b><span id="dGreg"></span></div>
+      <div class="hijri" id="dHijri"></div>
+    </div>
+    <button class="wxmini" id="wxMini" type="button" aria-label="الطقس"></button>
+    <div class="chips tchips" id="chips"></div>
+    <div class="sunarc" id="sunarc"></div>
+    <div class="greet" id="greet"></div>
+  </aside>
+
+  <section class="stage">
+    <nav class="topbar">
+      <div class="tabs" role="tablist" id="tabs">
+        <button type="button" role="tab" data-scene="0"><span>العمل</span></button>
+        <button type="button" role="tab" data-scene="1"><span>أنا</span></button>
+        <button type="button" role="tab" data-scene="2"><span>البيت</span></button>
+        <i class="tab-ink" id="tabInk" aria-hidden="true"></i>
+      </div>
+      <div class="tools" id="tools"></div>
+    </nav>
+    <div class="pager" id="pager">
+      <div class="track" id="track">
+        <div class="scene" id="sceneWork" role="tabpanel"></div>
+        <div class="scene" id="sceneMe" role="tabpanel"></div>
+        <div class="scene" id="sceneHome" role="tabpanel"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="ticker" id="ticker" hidden><div class="tick-label"><b>واس</b></div><div class="tick-win"><div class="tick-track" id="tickTrack"></div></div></footer>
+</div>
+
+<div class="ov" id="ov" hidden></div>
+<div class="lockscr" id="lock" hidden tabindex="-1"></div>
+<div class="ambient" id="ambient" hidden></div>
+<div class="welcome" id="welcome" hidden></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<video id="motionCam" playsinline muted autoplay class="hidden-cam"></video>
+
+<script src="vendor/zxing.min.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>
