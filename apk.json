@@ -1,10 +1,10 @@
 {
- "code": 23,
- "name": "3.9",
- "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-23.apk",
- "sha256": "5911f3189ec5f77d3fcd376d671139ee3b0e9cd48c029f2f3ccd7b8b0b77ddd1",
+ "code": 24,
+ "name": "3.10",
+ "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-24.apk",
+ "sha256": "4a532f5b2844bdfbfe2e6a9aa5e9fcc5a717fe4e6a8b3e707919c4e556bb0f4e",
  "notes": [
-  "بث متصل للتلفزيون بتأخير أقل من ثانية",
-  "تختار الصوت: التلفزيون أو اللوحي أو معاً"
+  "مفاتيح Box من داخل التطبيق",
+  "صوت اللوحي ما يتغير وقت البث"
  ]
 }
