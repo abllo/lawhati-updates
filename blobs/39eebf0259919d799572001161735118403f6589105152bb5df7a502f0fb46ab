@@ -27,7 +27,6 @@
     </div>
     <button class="wxmini" id="wxMini" type="button" aria-label="الطقس"></button>
     <div class="chips tchips" id="chips"></div>
-    <div class="sunarc" id="sunarc"></div>
     <div class="praybar" id="prayBar"></div>
   </aside>
 
