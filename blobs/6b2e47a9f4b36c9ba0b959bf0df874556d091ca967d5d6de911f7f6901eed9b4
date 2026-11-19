@@ -1,4 +1,5 @@
 /* your own channels: the on-screen look (tablet and TV); sizes follow the screen width */
+.mc-root,.mc-root *{box-sizing:border-box}
 .mc-root{position:absolute;top:0;right:0;bottom:0;left:0;background:#000;color:var(--mc-ink,#fff);overflow:hidden;font-size:20px;line-height:1.35}
 .mc-stage{position:absolute;top:0;right:0;bottom:0;left:0;background:#000}
 .mc-stage.mc-fr-rounded{top:3.2%;right:3.2%;bottom:3.2%;left:3.2%;border-radius:1.1em;overflow:hidden;box-shadow:0 0 0 .15em var(--mc),0 1em 3em rgba(0,0,0,.6)}
@@ -8,6 +9,17 @@
 .mc-stage.mc-fr-glow{top:2%;right:2%;bottom:2%;left:2%;border-radius:.7em;overflow:hidden;box-shadow:0 0 2em var(--mc)}
 .mc-pane{position:absolute;top:0;right:0;bottom:0;left:0;overflow:hidden;background:#000}
 .mc-media,.mc-media > *{position:absolute;top:0;right:0;bottom:0;left:0;width:100%;height:100%;border:0}
+/* three and four screens */
+.mc-ly-tri .mc-pane:nth-child(1){left:34%;margin-left:.15em}
+.mc-ly-tri .mc-pane:nth-child(2){right:66%;bottom:50%;margin:0 .15em .15em 0}
+.mc-ly-tri .mc-pane:nth-child(3){right:66%;top:50%;margin:.15em .15em 0 0}
+.mc-swap.mc-ly-tri .mc-pane:nth-child(1){left:0;right:34%;margin:0 .15em 0 0}
+.mc-swap.mc-ly-tri .mc-pane:nth-child(2){right:0;left:66%;margin:0 0 .15em .15em}
+.mc-swap.mc-ly-tri .mc-pane:nth-child(3){right:0;left:66%;margin:.15em 0 0 .15em}
+.mc-ly-quad .mc-pane:nth-child(1){left:50%;bottom:50%;margin:0 0 .15em .15em}
+.mc-ly-quad .mc-pane:nth-child(2){right:50%;bottom:50%;margin:0 .15em .15em 0}
+.mc-ly-quad .mc-pane:nth-child(3){left:50%;top:50%;margin:.15em 0 0 .15em}
+.mc-ly-quad .mc-pane:nth-child(4){right:50%;top:50%;margin:.15em .15em 0 0}
 /* two screens */
 .mc-ly-split .mc-pane:nth-child(1){left:50%;margin-left:.15em}.mc-ly-split .mc-pane:nth-child(2){right:50%;margin-right:.15em}
 .mc-swap.mc-ly-split .mc-pane:nth-child(1){left:0;right:50%;margin:0 .15em 0 0}.mc-swap.mc-ly-split .mc-pane:nth-child(2){right:0;left:50%;margin:0 0 0 .15em}
@@ -22,7 +34,11 @@
 .mc-stage.mc-fill .mc-media video{object-fit:cover}
 .mc-card{display:flex;align-items:center;justify-content:center;text-align:center;padding:6%;background:radial-gradient(circle at 30% 20%,var(--mc-d),#000 75%);font-size:2.3em;font-weight:700;line-height:1.5;white-space:pre-line}
 .mc-card-t{max-width:85%}
-.mc-bug{position:absolute;z-index:3;display:flex;align-items:center;gap:.5em;padding:.4em .7em;border-radius:999px;background:rgba(0,0,0,.45);border:1px solid var(--mc-a)}
+.mc-bug{position:absolute;z-index:3;display:flex;align-items:center;padding:.4em .7em;border-radius:999px;background:rgba(0,0,0,.45)}
+.mc-bug.mc-bare{background:none;padding:0;text-shadow:0 .08em .4em rgba(0,0,0,.8)}
+.mc-bug.mc-bare .mc-logo{filter:drop-shadow(0 .1em .4em rgba(0,0,0,.6))}
+.mc-logo.big{height:3.6em;max-width:11em}
+.mc-bug > * + *{margin-right:.5em}.mc-lower > * + *{margin-top:.2em}
 .mc-tl{top:3.5%;left:2.5%}.mc-tr{top:3.5%;right:2.5%}.mc-bl{bottom:3.5%;left:2.5%}.mc-br{bottom:3.5%;right:2.5%}
 .mc-root.mc-has-ticker .mc-bl,.mc-root.mc-has-ticker .mc-br{bottom:calc(3.5% + 2.7em)}
 .mc-logo{height:2.2em;width:auto;max-width:7em;object-fit:contain}
@@ -30,7 +46,7 @@
 .mc-name{font-weight:700;font-size:1em}
 .mc-live{background:#d33;color:#fff;font-size:.6em;font-weight:700;padding:.15em .5em;border-radius:.3em}
 .mc-clock{position:absolute;z-index:3;font-size:1.2em;font-weight:600;padding:.25em .6em;border-radius:999px;background:rgba(0,0,0,.45);direction:ltr}
-.mc-lower{position:absolute;z-index:3;right:4%;bottom:9%;max-width:70%;display:flex;flex-direction:column;gap:.2em;padding:.6em 1em;border-right:.3em solid var(--mc);background:linear-gradient(270deg,rgba(0,0,0,.78),rgba(0,0,0,.35));border-radius:.5em 0 0 .5em;opacity:0;transform:translateX(1.5em);transition:opacity .5s,transform .5s}
+.mc-lower{position:absolute;z-index:3;right:4%;bottom:9%;max-width:70%;display:flex;flex-direction:column;;padding:.6em 1em;border-right:.3em solid var(--mc);background:linear-gradient(270deg,rgba(0,0,0,.78),rgba(0,0,0,.35));border-radius:.5em 0 0 .5em;opacity:0;transform:translateX(1.5em);transition:opacity .5s,transform .5s}
 .mc-root.mc-has-ticker .mc-lower{bottom:calc(9% + 2.7em)}
 .mc-lower.on{opacity:1;transform:none}
 .mc-lower b{font-size:1.2em;font-weight:700}

@@ -1,18 +1,18 @@
 {
- "v": 25,
+ "v": 26,
  "base": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/blobs/",
  "files": {
-  "app.css": "67e90940e6b7efe8da12082a88b73e8cb407e32c4c848b5c017aee46e87be681",
-  "app.js": "77fdbe97c49775184eed5b99b81626f89b44362ed9251ba73a4b08286272fc4a",
+  "app.css": "192fda25992301cbd5b4eadd9e2e6c06b2ed3b93a8e3a5a7155f137f1225905f",
+  "app.js": "d5820a6f347d495fb9fe02e0742c863921479bd14b54b46feb5461254edfdfc1",
   "index.html": "ad08e936895c57f354fdc7930abe0f9e74e096a8f9bad1a9e51d45f3ea5f8103",
   "phone.html": "7b1abd0fe5fd28c2665e037c547b38b17a7684cebe49ba51a65e15223de346d6",
-  "tvplay.html": "f595ee52b372345e59c2ef9ef53c00c68999be781dfc6928b08ca854e029944d",
-  "version.json": "b3cdb1862a23cded1846c36cbff9cf92dd8225173bf6c615a6fde3e15e02d7fb",
-  "mych.html": "d11edb6316e7a17e98732bf6f3c5458ad2082475f765c40576feef5c4ce364e7",
-  "changes.json": "fbeb0c8f67ac7c705459e87315cf6dca9e3dd382193b851d845f7a7c127a40ab",
+  "tvplay.html": "8a61b45bdb815249a4779d35169e89169f301d8ba90d516b929ecb7ed58b50a9",
+  "version.json": "db9770d71578d46ed3474ba49efd6c8b3bc3273bb60d2d07064f61a86adc7828",
+  "mych.html": "f6ef9567f4a4392a3fab1a5a3c4dd2c15785d5683fb77bf20734eb0c5d1e6491",
+  "changes.json": "c0adbccd82942a947ab9ff9ff119e04f7ab2a2e695410b0735f5ae2605ef42e4",
   "screen.html": "ae4b240ab69afaf8e1744c92bec0c57efc16db748f75ef88641903ee0b1781c2",
-  "mych.js": "eff9a35f5c4500ac429bcb303993242d40ac3a70a5ace35169cbd084002fb68e",
-  "mych.css": "7c23f4017694a7a0bcebdf46f902ca4bbf66e94efcdb195f8e27e1aa816c5480",
+  "mych.js": "24662570c4067bb4adf70eca4821e329501251af1423f6edfeb24ca8f094e245",
+  "mych.css": "6b2e47a9f4b36c9ba0b959bf0df874556d091ca967d5d6de911f7f6901eed9b4",
   "fonts/ibm-plex-sans-arabic-latin-600-normal.woff2": "63f4757271e403f7baec0862f284ffaa4560ea6096ba9fe8bc6e585ca656e724",
   "fonts/ibm-plex-sans-arabic-latin-500-normal.woff2": "be6a3b2e37f3ad67aa822a55ce356d28c416331c97530a1ec076c2118240ca2d",
   "fonts/readex-pro-latin-wght-normal.woff2": "7074eeb987a25349069ed5c784e204904b928f4c878e9c3c88d636c01081ae52",
@@ -28,5 +28,5 @@
   "vendor/zxing_reader.wasm": "33c8c50be17d0bb05454b4fd3ffb5b5ab9a8e8d1c0ebeb21a1adf4a89c1a8b59",
   "vendor/leaflet.css": "a7837102824184820dfa198d1ebcd109ff6d0ff9a2672a074b9a1b4d147d04c6"
  },
- "sig": "d86Tu2Fk36TPiEcXKtUOyBFK6KVrjY4CwcyIhR3VvPm5dIjDOOmjrGXX4bes/Lx6T5eLk5rFDbpqzGzaRC0byCMovoEm3yd1JrRmZtdfkhlc/IHb63HEkG8P1KKHhCr4RHOEEUx6KJ72J6+rgzGRCtfkq7viov+IFyU7jQMLRfsOeFkwpXBppX4HJnM6xbB93bH5ZRh0SKFHRY91ktjjeamrXzHHfm//Bxik+59rFhtD08BQvG3UhH90E924kl4cRvFJ7p/9n7T1vgCR6nhSyN3EI/NkCznhzVlavpR6X+lksurI7Abdv17tMXc6JiQxelCDaA6leP/pSgowKB6VVg=="
+ "sig": "R3YtLVybiZFrZTk+6rWNW4nRXwsu1ZW/BJwcT8oY0mkz3bI/WnIT9/2ktpBwx6cP1cyljeMcDdG/XnOC7lZdr1qW59Yu5JbboHVBdGhcMIdjijjpSnHImCvJ789s79aIaNRUY/NDfI81g7//rsx2QzYQHh92LXwfZFkdmghxt0qnBQuOf9mILxcaumypdzk60dkRcuEl34AfGH11gcmwlX/0T/aU8cMZp4etPu6Mm+z4wE3LeKoZrjMlAxKEnUexcC+CvWZj5pe5PLKy7xaX56Wlwmqpq6LUDTH0VL2ESdirnEF4L5+PfNTCJ5gi5lqtri6a2+aR9lWlB8CJz1EBiw=="
 }
