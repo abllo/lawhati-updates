@@ -13,7 +13,7 @@
 <div id="stars" aria-hidden="true"></div>
 <canvas id="clouds" aria-hidden="true"></canvas>
 <div id="wxfx" aria-hidden="true"></div>
-<div class="topl"><div class="topl-r"><span class="batt" id="batt" hidden></span><button class="agent-top" id="agentBtn" type="button" aria-label="الوكيل"><span class="orb mini" aria-hidden="true"><i></i><i></i><i></i></span></button><button class="hs-btn" id="btBtn" type="button" hidden></button></div><button class="lock-big" id="lockBtn" type="button" aria-label="قفل الشاشة"></button></div>
+<div class="topl"><div class="topl-r"><span class="batt" id="batt" hidden></span><button class="agent-top" id="agentBtn" type="button" aria-label="الوكيل"><span class="orb mini" aria-hidden="true"><i></i><i></i><i></i></span></button><button class="hs-btn" id="btBtn" type="button" hidden></button></div><button class="lock-big" id="lockBtn" type="button" aria-label="قفل الشاشة"></button><div class="tabs vtabs" role="tablist" id="tabs"><button type="button" role="tab" data-scene="0"><span>العمل</span></button><button type="button" role="tab" data-scene="1"><span>أنا</span></button><button type="button" role="tab" data-scene="2"><span>المنزل</span></button><i class="tab-ink" id="tabInk" aria-hidden="true"></i></div></div>
 <div class="vignette" aria-hidden="true"></div>
 
 <div class="app" id="app">
@@ -28,16 +28,11 @@
     <button class="wxmini" id="wxMini" type="button" aria-label="الطقس"></button>
     <div class="chips tchips" id="chips"></div>
     <div class="sunarc" id="sunarc"></div>
+    <div class="praybar" id="prayBar"></div>
   </aside>
 
   <section class="stage">
     <nav class="topbar">
-      <div class="tabs" role="tablist" id="tabs">
-        <button type="button" role="tab" data-scene="0"><span>العمل</span></button>
-        <button type="button" role="tab" data-scene="1"><span>أنا</span></button>
-        <button type="button" role="tab" data-scene="2"><span>المنزل</span></button>
-        <i class="tab-ink" id="tabInk" aria-hidden="true"></i>
-      </div>
       <div class="tools" id="tools"></div>
     </nav>
     <div class="pager" id="pager">

@@ -194,7 +194,7 @@ html[data-phase="noon"][data-bg="mesh"] #themeBg::after,html[data-phase="morning
 .tile-s.exit-go .xs-badge{background:var(--ok);color:#06281C}
 .tile-s.exit-go .ts{color:var(--ok);font-weight:600;font-size:13px}
 @keyframes go-glow{50%{box-shadow:0 0 0 4px rgba(76,211,160,.18)}}
-html.idle .tile-s.exit-go{animation-play-state:paused}
+html.saving.idle .tile-s.exit-go{animation-play-state:paused}
 .tile-s .dot{width:9px;height:9px;border-radius:50%;background:var(--faint);flex:none}
 .tile-s.status.on .dot{background:var(--ok);box-shadow:0 0 0 4px rgba(76,211,160,.2);animation:pulse 2s ease-in-out infinite}
 .tile-s.status.done .dot{background:var(--blue)}
@@ -776,7 +776,7 @@ select.in-txt option{background:#1A1F2B;color:#fff}
 .note{max-width:860px;margin:6vh auto 0;padding:30px;border-radius:26px;background:rgba(255,255,255,.07);border:1px solid var(--line)}
 .note p{margin:0;font-family:var(--f-display);font-size:clamp(24px,3vw,40px);line-height:1.6;white-space:pre-wrap}
 /* battery: decoration rests while nobody is near */
-html.idle .orb i,html.idle #stars i,html.idle #themeBg i,html.idle .tb-photo,html.idle .batt.charging .bt-body i,html.idle .eq i{animation-play-state:paused}
+html.saving.idle .orb i,html.saving.idle #stars i,html.saving.idle #themeBg i,html.saving.idle .tb-photo,html.saving.idle .batt.charging .bt-body i,html.saving.idle .eq i{animation-play-state:paused}
 
 /* my calendar */
 .mylist{display:flex;flex-direction:column;gap:4px}
@@ -868,8 +868,8 @@ html.covered .topl .lock-big,html.playing .topl .lock-big{display:none}
 .agent-top .orb.mini{width:30px;height:30px}
 .claude-b{margin-inline-start:auto}
 /* battery: nothing moves behind a window or a video, and the board is not drawn under a full-screen player */
-html.covered .app *,html.covered #themeBg,html.covered #themeBg *,html.covered #stars i,html.covered .tb-photo,html.covered .orb i,
-html.playing .app *,html.playing #themeBg *,html.playing #stars i,html.idle .tick-track{animation-play-state:paused!important}
+html.saving.covered .app *,html.saving.covered #themeBg,html.saving.covered #themeBg *,html.saving.covered #stars i,html.saving.covered .tb-photo,html.saving.covered .orb i,
+html.playing .app *,html.playing #themeBg *,html.playing #stars i,html.saving.idle .tick-track{animation-play-state:paused!important}
 html.covered-full .app,html.covered-full #themeBg,html.covered-full #sky,html.covered-full #stars,html.covered-full #clouds,
 html.playing .app,html.playing #themeBg,html.playing #sky,html.playing #stars,html.playing #clouds{visibility:hidden}
 /* channel tiles: play on the TV */
@@ -978,7 +978,7 @@ html[data-scene="home"] .tab-ink{background:linear-gradient(180deg,#9BEFCF,#4FC5
 @keyframes dusty{to{transform:translateX(-3%) scale(1.04)}}
 #wxfx.fog{opacity:1;background:linear-gradient(180deg,rgba(220,226,235,.06),rgba(220,226,235,.22) 60%,rgba(220,226,235,.30))}
 #wxfx.cloudy{opacity:1;background:linear-gradient(180deg,rgba(120,130,150,.22),rgba(120,130,150,.06) 60%,transparent)}
-html.idle #wxfx,html.covered #wxfx,html.playing #wxfx{animation-play-state:paused}
+html.saving.idle #wxfx,html.saving.covered #wxfx,html.playing #wxfx{animation-play-state:paused}
 /* the moon under the sun arc */
 .moon-l{display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;color:var(--muted);margin-top:22px}
 .moon-l svg{display:block}
@@ -1029,3 +1029,69 @@ html.idle #wxfx,html.covered #wxfx,html.playing #wxfx{animation-play-state:pause
 .hs-btn.on{color:#fff;border-color:rgba(76,211,160,.7);background:rgba(76,211,160,.22)}
 .hs-btn.off{opacity:.45}
 .hs-btn .num{position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);font-size:10px;padding:0 4px;border-radius:6px;background:rgba(10,14,22,.85);color:#fff}
+
+/* picture in picture: only the video */
+html.pip .app,html.pip .topl,html.pip #castbar,html.pip #nowBar,html.pip .ytp-bar,html.pip .ov-head,html.pip #notice,html.pip #ticker,html.pip .ytp-x,html.pip .ytp-tap{display:none!important}
+html.pip #ytp{inset:0!important;left:0!important;bottom:0!important;width:auto!important;height:auto!important;aspect-ratio:auto!important;border-radius:0!important;border:0!important}
+/* what other apps play */
+.nowbar{left:auto;right:max(16px,env(safe-area-inset-right));max-width:min(46vw,520px)}
+.nowbar img,.nowbar .nb-i{width:44px;height:44px;border-radius:10px;object-fit:cover;flex:none}
+.nowbar .nb-i{display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,.1)}
+.nb-t{display:flex;flex-direction:column;min-width:0;flex:1}
+.nb-t b,.nb-t .sub{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* the places on the left, one under the other */
+.vtabs{flex-direction:column;padding:4px;border-radius:22px;width:64px;gap:2px;margin-top:4px}
+.vtabs button{min-width:0;width:100%;height:52px;padding:0;font-size:14px;border-radius:18px}
+.vtabs .tab-ink{left:4px;right:4px;width:auto!important;transition:top .45s var(--ease),height .45s var(--ease)}
+/* the tools: one strip that slides, the name under each icon */
+.topbar{flex-wrap:nowrap}
+.tools{flex:1;min-width:0;flex-wrap:nowrap!important;overflow-x:auto;overflow-y:hidden;gap:6px!important;scroll-snap-type:x proximity;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 18px,#000 calc(100% - 18px),transparent);mask-image:linear-gradient(90deg,transparent,#000 18px,#000 calc(100% - 18px),transparent);padding:0 6px}
+.tools::-webkit-scrollbar{display:none}
+.tl-i{appearance:none;flex:none;width:68px;display:flex;flex-direction:column;align-items:center;gap:5px;border:0;background:none;color:var(--ink);padding:2px 0;scroll-snap-align:start}
+.tl-ic{width:46px;height:46px;border-radius:15px;border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:inline-flex;align-items:center;justify-content:center;transition:transform .15s var(--ease)}
+.tl-ic svg{width:21px;height:21px}
+.tl-i:active .tl-ic{transform:scale(.92)}
+.tl-n{font-size:12px;color:var(--muted);max-width:68px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* weather: small */
+.wxmini{gap:8px}
+.wxmini .t{font-size:clamp(22px,2vw,28px)}
+.wxmini svg{width:28px;height:28px}
+.wxmini .c{font-size:13px}
+.wxmini .c b{font-size:14px}
+/* prayer times: one small row under the sun and the moon */
+.praybar{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;max-width:320px;width:100%;margin-top:8px}
+.praybar .pb{display:flex;flex-direction:column;align-items:center;gap:1px;padding:5px 2px;border-radius:12px;font-size:11.5px;color:var(--muted)}
+.praybar .pb b{font-family:var(--f-display);font-weight:500;font-size:13.5px;color:var(--ink)}
+.praybar .pb.on{background:rgba(var(--accent-rgb),.2);border:1px solid rgba(var(--accent-rgb),.45)}
+/* weather and cities in one small card */
+.wxc{gap:10px}
+.wxc-now{display:flex;align-items:center;gap:12px}
+.wxc-now svg{width:40px;height:40px;flex:none}
+.wxc-now .t{font-family:var(--f-display);font-size:30px;font-weight:300}
+.wxc-now .c{display:flex;flex-direction:column;font-size:13.5px;color:var(--muted)}
+.wxc-now .c b{color:var(--ink);font-size:15px;font-weight:500}
+.wxc-cities{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.wxc-cities::-webkit-scrollbar{display:none}
+.wxc-city{appearance:none;flex:none;border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--ink);border-radius:14px;padding:8px 12px;display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:104px}
+.wxc-city b{font-weight:500;font-size:14px}
+.wxc-city .sub{font-size:12px}
+.wxc-city.add{align-items:center;justify-content:center;color:var(--muted);border-style:dashed}
+
+.media-card .mc-row{display:flex;align-items:center;gap:12px}
+.media-card .mc-art{width:64px;height:64px;border-radius:14px;object-fit:cover;flex:none}
+.media-card .nb-i{width:44px;height:44px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,.1);flex:none}
+.media-card .mc-row > b{flex:1}
+/* weather + cities: one slim row */
+.card.wxc{display:flex;flex-direction:row;align-items:center;gap:14px;padding:12px 16px}
+.wxc .wxc-now{flex:none}
+.wxc .wxc-cities{flex:1;min-width:0;justify-content:flex-start}
+.wxc .ctile{width:auto;min-height:0;padding:7px 12px;border-radius:14px;gap:1px}
+.wxc .ctile .ct-time,.wxc .ctile .ct-time *{font-size:17px!important;line-height:1.15}
+.wxc .ctile.add{width:44px;min-width:44px;padding:0}
+.wxc .ctile.add svg{width:20px;height:20px}
+html[data-scene="home"]:not(.covered) #nowBar{display:none}
+/* the three places sit at the bottom of the left rail */
+.topl{bottom:max(10px,env(safe-area-inset-bottom));pointer-events:none}
+.topl > *{pointer-events:auto}
+.topl .vtabs{margin-top:auto}

@@ -1,14 +1,14 @@
 {
- "v": 11,
+ "v": 12,
  "base": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/blobs/",
  "files": {
-  "app.css": "11c83f2632a114c5e6af15cf803bf571aad1d81b1de51e3512c423bf431f1a1d",
-  "app.js": "78358d73d7f4c22b5d5878136a505c05237eb4f55f6bd8db5fff788226df380f",
-  "index.html": "642ac624ddf35c3e9fc3b59223a5434a1292cbc9f6b0d8932213b5cc073d9ca0",
+  "app.css": "05f0a4be2419e120b46d7e1031890d6ae6d12eaeb539362e95e497390351948c",
+  "app.js": "22741576b372410e57cb22337b59c17c62671b88a07f9f76e0df223b2216a5f2",
+  "index.html": "0202c95e000de2167b7adf20b4bd9f8a5f247a71faead7f7b79624a38342da7d",
   "phone.html": "7b1abd0fe5fd28c2665e037c547b38b17a7684cebe49ba51a65e15223de346d6",
   "tvplay.html": "82d72c74c9257f4b17ed118b0d5a454ba32ec46cf6e30318cb004f6aa192d4fb",
-  "version.json": "519583846179930e3123dabec9a7a1bb84ea7d96eaa1f463dc490f179cfb1c51",
-  "changes.json": "87682dddcfb9c2985196d5f2333e611436edf3fdc73a20fd3f16fcc2c5f6e46a",
+  "version.json": "e41317e35b805047e27bc66b38c1adf42d0c61089896060afb5612ec8e8af00c",
+  "changes.json": "57e4fe5b11c9d6d9681478de9abe7864d2d57f0fc26a0be3f0fbc7191682fcac",
   "fonts/ibm-plex-sans-arabic-latin-600-normal.woff2": "63f4757271e403f7baec0862f284ffaa4560ea6096ba9fe8bc6e585ca656e724",
   "fonts/ibm-plex-sans-arabic-latin-500-normal.woff2": "be6a3b2e37f3ad67aa822a55ce356d28c416331c97530a1ec076c2118240ca2d",
   "fonts/readex-pro-latin-wght-normal.woff2": "7074eeb987a25349069ed5c784e204904b928f4c878e9c3c88d636c01081ae52",
@@ -23,5 +23,5 @@
   "vendor/hls.min.js": "484054e8cd03d3f6d1781fb7f402bdc318d8a4c527f933a95c624e27cc9a9470",
   "vendor/zxing.min.js": "d7cc8f69dd70bdcf3ac00c9ae572bf2acb9f4132ba379c72df842e4db918652d"
  },
- "sig": "RpNNRepMQpdHeLpseQnqKPZVz/9ivO6rC+NAtu+pmOLxHY+JooyLZanMT+IkeS34XnEo6cc3FARaryGg76HfsawWL5brxwJamCKc+WA2QE2/BbdwJx7VDu4xozZyHEHB2gYrZU7b80Qg0+0Hd8Bs7EqV0yDzl1K8+RX3tv64jnJPUCW2iMUzqPCmnWVcg79VJcBiuN/EDM8r+z169WnB8JYtDOp3SVr7RiX/3IjclAMMch8qqKtuxyopsActOh6+hvA/x3IlOrIJzGrDroiObuOLw0i3bTSk4KwpDmGtFQIHGPY9vmdxq5yJicqflHCBvQw2S5ezloHVFgT8nJojrA=="
+ "sig": "KDQAkQcNw9SfHsv2Bu4CrFKSD9Q744cDVdg4bfpC4FVlQEW/6w5IJ84wVINI10zubHrKje/8fYyr+Q6BLqdplw6evyzu1fL6HwtnQVxR8qCxiTgw2I3H6tBe6m7IPi0MdEp89zmnDJmdv89J/rataBFAPEXJGrmrBGc9wsdYRnCSEEa0l49nn/WwsWg1NJjZoXlc8ELHMVVkoDZHWUuZykAcoATvEV9/bpHbSCdG6sSVCQYIbRM2BtdWU+UVnmschLvnBj5x8d9NjpmRFWt+kpSWRBmb5lNeY6a5wSTlTPXxmQ+bkYNfjee9sikzCunQJ4aDVlth8gSe8g15riy6mw=="
 }
