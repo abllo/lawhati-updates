@@ -1,11 +1,10 @@
 {
- "code": 17,
- "name": "3.3",
- "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-17.apk",
- "sha256": "dec58905493914ee364a97f27af26bd3004b291fb50a19747dab912f8575aa21",
+ "code": 18,
+ "name": "3.4",
+ "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-18.apk",
+ "sha256": "729268ebc9b0edfd63762ba0289aab868a0c4447ee82c4b073d5a0ccd743fc83",
  "notes": [
-  "إدارة الصور وحذفها",
-  "الصور كاملة على الشاشة",
-  "تنظيف الملفات المؤقتة"
+  "البث يملأ شاشة التلفزيون",
+  "مرآة الشاشة"
  ]
 }
