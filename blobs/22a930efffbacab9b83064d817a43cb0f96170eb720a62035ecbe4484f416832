@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>لوحتي</title>
 <link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="vendor/leaflet.css">
 <link rel="stylesheet" href="app.css">
 </head>
 <body>
@@ -53,7 +54,6 @@
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <video id="motionCam" playsinline muted autoplay class="hidden-cam"></video>
 
-<script src="vendor/zxing.min.js" defer></script>
 <script src="app.js" defer></script>
 </body>
 </html>
