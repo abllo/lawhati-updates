@@ -1,10 +1,11 @@
 {
- "code": 18,
- "name": "3.4",
- "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-18.apk",
- "sha256": "729268ebc9b0edfd63762ba0289aab868a0c4447ee82c4b073d5a0ccd743fc83",
+ "code": 19,
+ "name": "3.5",
+ "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-19.apk",
+ "sha256": "f14ee22737c85b42bba0a7fcea95df4b8734865325d2148d83d951965c443bdc",
  "notes": [
-  "البث يملأ شاشة التلفزيون",
-  "مرآة الشاشة"
+  "قنواتي الخاصة",
+  "زر العرض على الشاشة داخل القناة",
+  "فيديو من اللوحي"
  ]
 }

@@ -1180,3 +1180,38 @@ html.covered #nowBar{display:none}
 .pm-t[aria-pressed="true"] .pm-c{background:var(--accent)}.pm-t[aria-pressed="true"] .pm-c svg{opacity:1}
 .btn.danger{background:#c2413b;border-color:#c2413b;color:#fff}.btn.danger:disabled{opacity:.45}
 .frame .pm-t img{position:static;opacity:1;animation:none;transition:none;width:100%;height:100%;object-fit:cover}
+.castm-w{position:relative}
+.castm{position:absolute;top:calc(100% + 8px);left:0;min-width:200px;display:flex;flex-direction:column;padding:6px;border-radius:16px;background:rgba(18,22,30,.96);border:1px solid var(--line);box-shadow:0 12px 30px rgba(0,0,0,.45);z-index:8}
+.castm button{appearance:none;background:none;border:0;color:var(--ink);text-align:right;padding:11px 14px;border-radius:10px;font:inherit;font-size:15px}
+.castm button:active{background:rgba(255,255,255,.08)}
+/* your own channels */
+.mych-play{position:absolute;top:0;right:0;bottom:0;left:0}
+.mych-tile .lg{box-shadow:inset 0 0 0 2px var(--tile-c,transparent)}
+.lt-edit{position:absolute;top:8px;left:8px;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.45);color:#fff}
+.lt-edit svg{width:17px;height:17px}
+.mych-ed{max-width:900px;margin:0 auto;padding-bottom:30px}
+.mych-pv{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;margin-bottom:16px;border:1px solid var(--line)}
+.mych-pv .mc-root{font-size:.6em}
+.mych-logo{height:42px;max-width:120px;object-fit:contain;border-radius:8px;background:rgba(255,255,255,.06);padding:4px}
+.mych-cols .mych-c{width:30px;height:30px;border-radius:50%;border:2px solid rgba(255,255,255,.2);padding:0}
+.mych-cols .mych-c.on{border-color:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.25)}
+.mych-cols input[type=color]{width:38px;height:34px;border:0;background:none;padding:0}
+.seg{display:inline-flex;flex-wrap:wrap;gap:4px;padding:3px;border-radius:12px;background:rgba(255,255,255,.06)}
+.seg button{appearance:none;border:0;background:none;color:var(--muted);padding:7px 12px;border-radius:9px;font:inherit;font-size:14px}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#111}
+.mych-items{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
+.mych-it{display:flex;align-items:center;gap:10px;padding:8px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid var(--line)}
+.mych-it img{width:84px;height:48px;object-fit:cover;border-radius:8px;flex:none}
+.mych-it .mych-ty{width:84px;height:48px;border-radius:8px;flex:none;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08);font-size:12px;color:var(--muted)}
+.mych-it .x{flex:1;min-width:0;display:flex;flex-direction:column}.mych-it .x b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:500}
+.mych-dur{width:64px;text-align:center}
+.mych-add{flex-wrap:wrap}
+.mych-save{margin-top:18px}
+.mych-res{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:12px}
+.mych-r{appearance:none;display:flex;flex-direction:column;gap:4px;text-align:right;padding:8px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--ink);font:inherit}
+.mych-r img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px}
+.mych-r img.lg{aspect-ratio:auto;height:56px;object-fit:contain}
+.mych-r b{font-weight:500;font-size:14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.mych-r.on{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.mych-new .ini svg{width:26px;height:26px}
+.mych-play{isolation:isolate;z-index:0}

@@ -6,6 +6,7 @@
 <title>لوحتي</title>
 <link rel="stylesheet" href="fonts/fonts.css">
 <link rel="stylesheet" href="vendor/leaflet.css">
+<link rel="stylesheet" href="mych.css">
 <link rel="stylesheet" href="app.css">
 </head>
 <body>

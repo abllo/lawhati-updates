@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>قناتي</title>
+<link rel="stylesheet" href="mych.css">
+<style>html,body{margin:0;height:100%;background:#000;overflow:hidden;cursor:none;font-family:system-ui,sans-serif}#root{position:fixed;inset:0}</style>
+</head><body><div id="root"></div>
+<script src="vendor/hls.min.js"></script>
+<script src="mych.js"></script>
+</body></html>
