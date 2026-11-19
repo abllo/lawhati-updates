@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=auto">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>لوحتي</title>
 <link rel="stylesheet" href="fonts/fonts.css">
 <link rel="stylesheet" href="app.css">
@@ -12,7 +12,7 @@
 <canvas id="sky" aria-hidden="true"></canvas>
 <div id="stars" aria-hidden="true"></div>
 <canvas id="clouds" aria-hidden="true"></canvas>
-<span class="batt" id="batt" hidden></span>
+<div class="topl"><div class="topl-r"><span class="batt" id="batt" hidden></span><button class="agent-top" id="agentBtn" type="button" aria-label="الوكيل"><span class="orb mini" aria-hidden="true"><i></i><i></i><i></i></span></button></div><button class="lock-big" id="lockBtn" type="button" aria-label="قفل الشاشة"></button></div>
 <div class="vignette" aria-hidden="true"></div>
 
 <div class="app" id="app">
@@ -33,7 +33,7 @@
       <div class="tabs" role="tablist" id="tabs">
         <button type="button" role="tab" data-scene="0"><span>العمل</span></button>
         <button type="button" role="tab" data-scene="1"><span>أنا</span></button>
-        <button type="button" role="tab" data-scene="2"><span>البيت</span></button>
+        <button type="button" role="tab" data-scene="2"><span>المنزل</span></button>
         <i class="tab-ink" id="tabInk" aria-hidden="true"></i>
       </div>
       <div class="tools" id="tools"></div>
