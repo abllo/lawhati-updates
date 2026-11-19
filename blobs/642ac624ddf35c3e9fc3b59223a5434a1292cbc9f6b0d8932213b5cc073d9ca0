@@ -13,7 +13,7 @@
 <div id="stars" aria-hidden="true"></div>
 <canvas id="clouds" aria-hidden="true"></canvas>
 <div id="wxfx" aria-hidden="true"></div>
-<div class="topl"><div class="topl-r"><span class="batt" id="batt" hidden></span><button class="agent-top" id="agentBtn" type="button" aria-label="الوكيل"><span class="orb mini" aria-hidden="true"><i></i><i></i><i></i></span></button></div><button class="lock-big" id="lockBtn" type="button" aria-label="قفل الشاشة"></button></div>
+<div class="topl"><div class="topl-r"><span class="batt" id="batt" hidden></span><button class="agent-top" id="agentBtn" type="button" aria-label="الوكيل"><span class="orb mini" aria-hidden="true"><i></i><i></i><i></i></span></button><button class="hs-btn" id="btBtn" type="button" hidden></button></div><button class="lock-big" id="lockBtn" type="button" aria-label="قفل الشاشة"></button></div>
 <div class="vignette" aria-hidden="true"></div>
 
 <div class="app" id="app">
