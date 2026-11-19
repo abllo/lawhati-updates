@@ -1,10 +1,11 @@
 {
- "code": 21,
- "name": "3.7",
- "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-21.apk",
- "sha256": "0775c1064d6cf1e10a1aeca965442e2d385423ad5291211c6036e789a29f4502",
+ "code": 22,
+ "name": "3.8",
+ "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-22.apk",
+ "sha256": "b2294e5f774ef1ffb9774ff35533e7bb6feb8ace28545c680dff59e0cb41112a",
  "notes": [
-  "تصوير الشاشة للتلفزيون",
-  "استوديو القناة"
+  "شاشة مخفية داخل اللوحي ترسم قنواتك متعددة الشاشات وتبثها للتلفزيون",
+  "يوتيوب قنواتك يفتح في تطبيق يوتيوب حق التلفزيون",
+  "خانة BOX لحسابك في Box"
  ]
 }
