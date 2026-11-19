@@ -1,15 +1,15 @@
 {
- "v": 27,
+ "v": 28,
  "base": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/blobs/",
  "files": {
   "app.css": "d62e5a75cf7a16eaa68a10dd6d5dfce21817d3b3b365860ad8547b312e5a17cb",
-  "app.js": "326930c4f27cf01f3c2328b6a8d4421b2df27ab3efe445b0acaf873507b688e4",
+  "app.js": "ce937388afb02fd0b427fa36c0e8cca89c7579ab8fc9a5879d1a40c2ae52cd52",
   "index.html": "ad08e936895c57f354fdc7930abe0f9e74e096a8f9bad1a9e51d45f3ea5f8103",
   "phone.html": "7b1abd0fe5fd28c2665e037c547b38b17a7684cebe49ba51a65e15223de346d6",
   "tvplay.html": "8a61b45bdb815249a4779d35169e89169f301d8ba90d516b929ecb7ed58b50a9",
-  "version.json": "e5b5e0df5191fddb7f56a05916f3ff6e16badba9dba15e7a9f0f2d21ff94967e",
+  "version.json": "a9b1ef6eb47a09f53b6a2ef9a4590040c470a9d469203c7e49ae56d6c3363587",
   "mych.html": "f6ef9567f4a4392a3fab1a5a3c4dd2c15785d5683fb77bf20734eb0c5d1e6491",
-  "changes.json": "d3b705f9cb7198171fcf55b87f9888f64affb57ca38fb7abc81215651c473c9b",
+  "changes.json": "d812666127ea4b20ce6b589965bcbdd7a4c4e12e8344ffc5ed7ff80032382fcb",
   "screen.html": "ae4b240ab69afaf8e1744c92bec0c57efc16db748f75ef88641903ee0b1781c2",
   "mych.js": "99f831849b4614c6537b612b6e9d214d061e0d25ef9d97bbf0459696bdeca3ac",
   "mych.css": "6b2e47a9f4b36c9ba0b959bf0df874556d091ca967d5d6de911f7f6901eed9b4",
@@ -28,5 +28,5 @@
   "vendor/zxing_reader.wasm": "33c8c50be17d0bb05454b4fd3ffb5b5ab9a8e8d1c0ebeb21a1adf4a89c1a8b59",
   "vendor/leaflet.css": "a7837102824184820dfa198d1ebcd109ff6d0ff9a2672a074b9a1b4d147d04c6"
  },
- "sig": "k9j3Vh5cB/b0sgMh5dwQ/J+rF3Pgi5vkxGYuIG4JYvfSwJHSvx6escyaG6hftN7ze8gpodbupQLXTxm6GEZTZW2D/ookrg7iit2aqnYZUR5dDMD1I4yji3qXqRaDluj+Mq0Y9zur6KDfgJKlwY4Qm0wejziVci4vPorG75+pR9VdlhMfi2ccSyrUnmEODgqFtPAvsWElLLN9jDnEh5UsCzMnZymPL9gKnYAFBGAYySXdzUIOjZHi2pD5QbDoNo0fRYjRyoAoinGHU+dEAQ+J02XMgNEOn5fpM8VaZ7JrzupQwQQoY9fgn0xGLmgY0Jh01iORm9J4lY3DiXfEZ/l6Zg=="
+ "sig": "D0DUUkzh+1zMKi9e0X07sBUsL/aMkobVXmxmwbqIgV7sN+wnb0+r+Waw0D+YySiGXeotttUW/Nx1mFZTYZwuRfwHmcA0b5OMxaJWjnem97EAhd4CrawYt0DosF+/QlQgGVDeC683hflrnfOTDWVJyC9r3TpH/fdJQ+Ir9Br1HpwcqEICMxIzYUA8YiX9UCgNlE9LsCpyMdRQ+64swYi5Eu8u0uWGKhCqA+A2qUfTfpKBD5gdRjIpDV7ZSaBzhlVptwQItQQIazF2CZsTMRok+AauF/8AleyuPI3aU8srwa0UWYknS4CXtLpvP7CpT4kKYoxrGUuB8pIuY828Oy7sMQ=="
 }
