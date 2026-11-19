@@ -1,9 +1,10 @@
 {
- "code": 20,
- "name": "3.6",
- "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-20.apk",
- "sha256": "948e9fce425f58755980244b449facc534df2afb640f225b6a527bf57863fd27",
+ "code": 21,
+ "name": "3.7",
+ "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-21.apk",
+ "sha256": "0775c1064d6cf1e10a1aeca965442e2d385423ad5291211c6036e789a29f4502",
  "notes": [
-  "شبكة الضيوف ونقطة الاتصال"
+  "تصوير الشاشة للتلفزيون",
+  "استوديو القناة"
  ]
 }

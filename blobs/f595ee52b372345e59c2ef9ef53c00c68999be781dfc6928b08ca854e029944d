@@ -10,7 +10,7 @@
 (function () {
   var p = new URLSearchParams(location.search), v = document.getElementById('v'), t = document.getElementById('t'), go = document.getElementById('go');
   var src = '/p?k=' + encodeURIComponent(p.get('k') || '') + '&u=' + encodeURIComponent(p.get('u') || '') + (p.get('r') ? '&r=' + encodeURIComponent(p.get('r')) : '');
-  t.textContent = p.get('t') || ''; t.className = 'on'; setTimeout(function () { t.className = ''; }, 4000);
+  var tt = p.get('t') || ''; if (tt === 'null' || tt === 'undefined') tt = ''; t.textContent = tt; t.className = tt ? 'on' : ''; setTimeout(function () { t.className = ''; }, 4000);
   var hls = null;
   function start() {
     if (window.Hls && Hls.isSupported()) {
