@@ -1187,7 +1187,7 @@ html.covered #nowBar{display:none}
 /* your own channels */
 .mych-play{position:absolute;top:0;right:0;bottom:0;left:0}
 .mych-tile .lg{box-shadow:inset 0 0 0 2px var(--tile-c,transparent)}
-.lt-edit{position:absolute;top:8px;left:8px;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.45);color:#fff}
+.lt-edit{position:absolute;top:8px;right:8px;z-index:2;width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(10,14,22,.72);border:1px solid var(--line-2);color:#fff}
 .lt-edit svg{width:17px;height:17px}
 .mych-ed{max-width:900px;margin:0 auto;padding-bottom:30px}
 .mych-pv{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;margin-bottom:16px;border:1px solid var(--line)}
