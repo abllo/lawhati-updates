@@ -1,12 +1,9 @@
 {
- "code": 15,
- "name": "3.1",
- "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-15.apk",
- "sha256": "ba435dada38ecd934b4d0bfbd5691016639e9f29b2468e77e30070ba5ebb4292",
+ "code": 16,
+ "name": "3.2",
+ "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-16.apk",
+ "sha256": "ef2486f3cd898bcf5e63b0a059c8f898dfa6d51ef9363f65f468e57a3bbea571",
  "notes": [
-  "صور الآيفون عبر LocalSend",
-  "رسائل من الجوال",
-  "تكبير بالأصابع في القنوات والكاميرات",
-  "ماسح باركود أسرع"
+  "التحديثات تتثبت بصمت بعد هذي النسخة"
  ]
 }
