@@ -1,9 +1,11 @@
 {
- "code": 16,
- "name": "3.2",
- "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-16.apk",
- "sha256": "ef2486f3cd898bcf5e63b0a059c8f898dfa6d51ef9363f65f468e57a3bbea571",
+ "code": 17,
+ "name": "3.3",
+ "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-17.apk",
+ "sha256": "dec58905493914ee364a97f27af26bd3004b291fb50a19747dab912f8575aa21",
  "notes": [
-  "التحديثات تتثبت بصمت بعد هذي النسخة"
+  "إدارة الصور وحذفها",
+  "الصور كاملة على الشاشة",
+  "تنظيف الملفات المؤقتة"
  ]
 }
