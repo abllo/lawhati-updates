@@ -1,14 +1,14 @@
 {
- "v": 14,
+ "v": 15,
  "base": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/blobs/",
  "files": {
   "app.css": "05f0a4be2419e120b46d7e1031890d6ae6d12eaeb539362e95e497390351948c",
-  "app.js": "0bda287699910b46d21cbe852dc249fd2ccf557e651639f44332de3a7e877a2e",
+  "app.js": "54b8148dba5220f09aa8f805e3a12a3016238d5bfb995e2b5ba21497a51b2e90",
   "index.html": "39eebf0259919d799572001161735118403f6589105152bb5df7a502f0fb46ab",
   "phone.html": "7b1abd0fe5fd28c2665e037c547b38b17a7684cebe49ba51a65e15223de346d6",
   "tvplay.html": "82d72c74c9257f4b17ed118b0d5a454ba32ec46cf6e30318cb004f6aa192d4fb",
-  "version.json": "21568b52e93c25d2ebf3386a6016819e35cbc07d1a0a4c3661285273ea6dd00f",
-  "changes.json": "0c52146302af75ecfe8cc96748447377b01450dd5d60ffde5c913eff47bc4e66",
+  "version.json": "43a0395a4ee1ccbae20f78dd87a0c6ab24bcac89c6a1fe505107cbd11f766aa5",
+  "changes.json": "e27be37f610bea15058d0a97a19cc6438547bbea4e1a98a4e78636970b228c70",
   "fonts/ibm-plex-sans-arabic-latin-600-normal.woff2": "63f4757271e403f7baec0862f284ffaa4560ea6096ba9fe8bc6e585ca656e724",
   "fonts/ibm-plex-sans-arabic-latin-500-normal.woff2": "be6a3b2e37f3ad67aa822a55ce356d28c416331c97530a1ec076c2118240ca2d",
   "fonts/readex-pro-latin-wght-normal.woff2": "7074eeb987a25349069ed5c784e204904b928f4c878e9c3c88d636c01081ae52",
@@ -23,5 +23,5 @@
   "vendor/hls.min.js": "484054e8cd03d3f6d1781fb7f402bdc318d8a4c527f933a95c624e27cc9a9470",
   "vendor/zxing.min.js": "d7cc8f69dd70bdcf3ac00c9ae572bf2acb9f4132ba379c72df842e4db918652d"
  },
- "sig": "KDwPP/Aim2UmYGSO6JxmFe7oRJUvCfRGvPzljBiUJIi8m43yoYKs1cBi8dlPYe3c53naBDh3IAeEv6851Vonv7p01eoizH2NR60xQq3+cgz3D9jGzkZDtT5siSZUgblWVPG30uyyhtdFRtEp3m/cdwsDevOkZrGHCGkdqdqJ5M7pUbsfiCejgsW/HKwVJs1VRDNeMlRGpp72v7iXNjfcPyVArwxUq+Q1CzFvedX8WBrEyof3dZ2GdkvbYqdChnOBkrjJZBhbAkfAO6YQKtFUJ00K9I9egIURfNzlZZpNDrh4PcI3WfzsriAO+GVZ8bTmD00osuKbKoI7jXBqp2dEag=="
+ "sig": "kgIZ4G+t/blnRf/EGF+aWYLlMmymFNJcNTRKrIocElu9l56Vf/jZspb6GFoIiCa2cImgyrp0DYZ5aHFsQnQ//5MpRuTWf89rAs0iSUPLHm6lMwf1Kww4YxGdG5mWdC8S03IChtTLPWXeByeuoNgP2IO0Mcz/dobDJfdpUO8MrpWDfHHwan//Y0PWjA2V9MJouooZZ+4GBwZaFjsmXIlHHnON8rwgcEA9+NYVhzeNk4FALwM3OdDbleU6r0hTEn7/2sX24r+wPctQaPx36xyxTkcqiT3bwjIvj6DCBdiFfO/qeR4mK46fK75ima93JnSiJUU1+QaLpH+4YD6J1VWwzw=="
 }

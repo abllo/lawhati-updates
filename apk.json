@@ -1,13 +1,10 @@
 {
- "code": 13,
- "name": "2.9",
- "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-13.apk",
- "sha256": "e2a4201fb32136b31a5364f19ab37da689415b7d7cb86e17c01298341dae070d",
+ "code": 14,
+ "name": "3.0",
+ "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-14.apk",
+ "sha256": "70d9c31c11f129a6c89f415e4a24c08300b34b5fef0694323d3941de830eb0c1",
  "notes": [
-  "تحديث التطبيق صار تلقائي",
-  "نافذة الفيديو الصغيرة",
-  "شريط يشتغل الآن",
-  "حساس الضوء والطرق",
-  "رصد الجوال بالبلوتوث"
+  "تتثبت بدون حظر الحماية",
+  "التحكم بصوت أي تطبيق"
  ]
 }
