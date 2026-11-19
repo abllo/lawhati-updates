@@ -180,6 +180,18 @@ html[data-phase="noon"][data-bg="mesh"] #themeBg::after,html[data-phase="morning
 .tile-s .ts{font-size:12px;color:var(--faint);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tile-s.accent{background:linear-gradient(160deg,rgba(var(--accent-rgb),.22),rgba(var(--accent-rgb),.06));border-color:rgba(var(--accent-rgb),.45)}
 .tile-s.accent .tv{color:var(--accent-2)}
+.tile-s .tl{display:flex;align-items:center;gap:6px}
+.xs-badge{margin-inline-start:auto;font-size:11px;font-weight:600;padding:1px 8px;border-radius:999px}
+.tile-s.exit-wait{background:linear-gradient(160deg,rgba(245,140,60,.28),rgba(245,140,60,.07));border-color:rgba(245,150,70,.6)}
+.tile-s.exit-wait .tv{color:#FFC48A}
+.tile-s.exit-wait .xs-badge{background:rgba(245,140,60,.3);color:#FFD2A6}
+.tile-s.exit-wait .ts{color:#FFC48A}
+.tile-s.exit-go{background:linear-gradient(160deg,rgba(76,211,160,.32),rgba(76,211,160,.08));border-color:rgba(76,211,160,.75);animation:go-glow 2.4s ease-in-out infinite}
+.tile-s.exit-go .tv{color:#B8FFE2}
+.tile-s.exit-go .xs-badge{background:var(--ok);color:#06281C}
+.tile-s.exit-go .ts{color:var(--ok);font-weight:600;font-size:13px}
+@keyframes go-glow{50%{box-shadow:0 0 0 4px rgba(76,211,160,.18)}}
+html.idle .tile-s.exit-go{animation-play-state:paused}
 .tile-s .dot{width:9px;height:9px;border-radius:50%;background:var(--faint);flex:none}
 .tile-s.status.on .dot{background:var(--ok);box-shadow:0 0 0 4px rgba(76,211,160,.2);animation:pulse 2s ease-in-out infinite}
 .tile-s.status.done .dot{background:var(--blue)}
@@ -410,6 +422,10 @@ html[data-phase="noon"][data-bg="mesh"] #themeBg::after,html[data-phase="morning
 .tvvideo{width:100%;height:100%;object-fit:contain;background:#000}
 .tvmsg{position:absolute;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:14px;font-size:18px}
 .ltile.dead{opacity:.45}
+.cat-chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:-4px 0 14px;touch-action:pan-x}
+.cat-chips::-webkit-scrollbar{display:none}
+.chip-btn.on{background:linear-gradient(180deg,var(--accent-2),var(--accent));color:var(--accent-ink);border-color:transparent}
+.lgrid-h{grid-column:1/-1;margin:6px 0 0;font-family:var(--f-display);font-weight:600;font-size:15px;color:var(--accent)}
 .noaudio{position:absolute;bottom:80px;left:50%;transform:translateX(-50%);z-index:3;display:flex;align-items:center;gap:12px;padding:8px 8px 8px 16px;border-radius:999px;background:rgba(0,0,0,.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .radiobar{position:fixed;left:24px;bottom:72px;z-index:25;display:flex;align-items:center;gap:12px;padding:8px 8px 8px 16px;border-radius:999px;background:var(--glass-2);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--line-2);box-shadow:0 10px 30px rgba(0,0,0,.3)}
 .radiobar b{font-family:var(--f-display);font-weight:500}
@@ -734,6 +750,16 @@ select.in-txt option{background:#1A1F2B;color:#fff}
 .note p{margin:0;font-family:var(--f-display);font-size:clamp(24px,3vw,40px);line-height:1.6;white-space:pre-wrap}
 /* battery: decoration rests while nobody is near */
 html.idle .orb i,html.idle #stars i,html.idle #themeBg i,html.idle .tb-photo,html.idle .batt.charging .bt-body i,html.idle .eq i{animation-play-state:paused}
+
+/* my calendar */
+.mylist{display:flex;flex-direction:column;gap:4px}
+.my-d{font-family:var(--f-display);font-weight:600;font-size:12.5px;color:var(--accent);margin-top:6px}
+.my-d:first-child{margin-top:0}
+.my-e{display:flex;align-items:flex-start;gap:10px;padding:7px 10px;border-radius:12px;background:rgba(255,255,255,.05)}
+.my-e.live{background:rgba(76,211,160,.16);border:1px solid rgba(76,211,160,.45)}
+.my-t{font-size:12.5px;color:var(--muted);min-width:62px;padding-top:2px}
+.my-x{display:flex;flex-direction:column;min-width:0}
+.my-x b{font-weight:600;font-size:14.5px;line-height:1.35}
 
 /* screen lock */
 .lockscr{position:fixed;inset:0;z-index:28;display:flex;align-items:center;justify-content:center;background:rgba(var(--glass-rgb),.55);backdrop-filter:blur(34px) saturate(1.2);-webkit-backdrop-filter:blur(34px) saturate(1.2);animation:fadein .3s var(--ease);transition:opacity .35s}

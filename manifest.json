@@ -1,12 +1,12 @@
 {
- "v": 2,
+ "v": 3,
  "base": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/blobs/",
  "files": {
-  "app.css": "1546a6e9066624d2a7d4f3a4d061bf11f45ecbeb5452c6458d06bf1177059d46",
-  "app.js": "f73f4d97afbf6c827fca33a02368b7676abb7cb1d9c6d3ea7e2bf82fd7ef78f9",
+  "app.css": "83f83cd0154e68ddb10844bf4f0aa805e4f6a0a5bcd6eb97cc5505e257454fd9",
+  "app.js": "5aa4bbda99057560b2509fbf7a9f071e8b3267367afc4c19a8531a88733b6128",
   "index.html": "a39b1345581be975165aec65841ef2dee402a67c3e9d05d9a5c936c039baeaf7",
   "phone.html": "7b1abd0fe5fd28c2665e037c547b38b17a7684cebe49ba51a65e15223de346d6",
-  "version.json": "0b3a178d3458979eb4524c685a11f329077b77c0b98c630b02b928918d1b4f11",
+  "version.json": "b460644a73d5df6998c57c4eaf43ebc3e595bd06930af6e42d0008f84d91c849",
   "fonts/ibm-plex-sans-arabic-latin-600-normal.woff2": "63f4757271e403f7baec0862f284ffaa4560ea6096ba9fe8bc6e585ca656e724",
   "fonts/ibm-plex-sans-arabic-latin-500-normal.woff2": "be6a3b2e37f3ad67aa822a55ce356d28c416331c97530a1ec076c2118240ca2d",
   "fonts/readex-pro-latin-wght-normal.woff2": "7074eeb987a25349069ed5c784e204904b928f4c878e9c3c88d636c01081ae52",
@@ -20,5 +20,5 @@
   "fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2": "16734a5adb27b0f363e566cbbeacec480da0dc0baa19c8f0053251c2e2bc0eac",
   "vendor/zxing.min.js": "d7cc8f69dd70bdcf3ac00c9ae572bf2acb9f4132ba379c72df842e4db918652d"
  },
- "sig": "W0GxDjcQ9iF2ba96tzb2dtojCXIwvcyeZgfDSjMN7SZjNecmqCz/MjE3qSGHhlSvdF/b3j8WvRUBzhdmPa5rMJda4brU4by4sob+rtCi0H46Ha/KUjSGmvFu56y+kDE1Y0s/kgleTmX1rhlyPTH9xwQ33YIHzvX3dnURj3cM+1dK4CTizph/vQPJAEC36BrJB8sfTrRflWY4wpmeQv/AqbOW2aKAik+kknvVHIg+7UrZZOi3Uk4Dfq/uRJwxuB08ggsX9qDTPaRXerOYuP4JJpvfOsnIBtaz3ew8JzbLDIFrnmg3P7AX7wNQCk1zxbq7wLBHPGAUyVNz+HPyBsBlMg=="
+ "sig": "OAzDO34B4z5XqilrKOqFBzobriHuCIX41pK+iQwinvg0o2iaKS04Jmyql9fR5OMJ4OmeTSFz8kh04XQNOAM5DI0G9pAkWO2EmBuZU0evzQTDnAy8intLNsGPYAvoxJQ5mG3inmyjj22r9dIJmMxsSHGdHdKtwsscBAL5SNE5yhKRHjPu0PzkjVazDGh9puibOQvIyRhcb7MHhSdXCkRTV71+UpMwZXB58wbDaBiu4TxiVpSudzVhUUYtINTY5bMtNy6A8armJ95JsM2GoAgtAZa8LWOiW3TGub52B5GihMREbbC8Ta6DWGh0Meii4+1w+14e/J7UmSnN8i7lAt0orA=="
 }
