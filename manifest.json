@@ -1,12 +1,12 @@
 {
- "v": 4,
+ "v": 5,
  "base": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/blobs/",
  "files": {
-  "app.css": "9bfd6067cc5303dca8bcf4d0ef893121a678f494cb14094d66875dd99b3589cb",
-  "app.js": "31bb0e7af571211f20e593ee5998d8b8b0908b572544796b89fd1e97ced5461a",
+  "app.css": "34c9bef2fadabe26af67ac055bd9580fc8910f4a0520a46544a21a505a2bc01b",
+  "app.js": "dbaf4ccac6055763e458ae564090a6fa003c99dd6f6cbffde28b563c8916dee4",
   "index.html": "a687477079962e8823c4961e52040a3ae02030509f000121907bc57605d89e3b",
   "phone.html": "7b1abd0fe5fd28c2665e037c547b38b17a7684cebe49ba51a65e15223de346d6",
-  "version.json": "9f4408bb0a9ecc9ce133dfd044a32707d16e664b3cac68c94609523fa4377f7e",
+  "version.json": "a6d0935b6274e67e3bec88aa9247d83f2c124f91dee3466fb065fe59a7383a71",
   "fonts/ibm-plex-sans-arabic-latin-600-normal.woff2": "63f4757271e403f7baec0862f284ffaa4560ea6096ba9fe8bc6e585ca656e724",
   "fonts/ibm-plex-sans-arabic-latin-500-normal.woff2": "be6a3b2e37f3ad67aa822a55ce356d28c416331c97530a1ec076c2118240ca2d",
   "fonts/readex-pro-latin-wght-normal.woff2": "7074eeb987a25349069ed5c784e204904b928f4c878e9c3c88d636c01081ae52",
@@ -20,5 +20,5 @@
   "fonts/ibm-plex-sans-arabic-arabic-600-normal.woff2": "16734a5adb27b0f363e566cbbeacec480da0dc0baa19c8f0053251c2e2bc0eac",
   "vendor/zxing.min.js": "d7cc8f69dd70bdcf3ac00c9ae572bf2acb9f4132ba379c72df842e4db918652d"
  },
- "sig": "SMxsqnNn63O4SsDk34SWU1GBQrgvglkP11Cxag+rKV1luCyg4WXq5slgnT1Q9p2kNs/e+tOx0smi8qSMn8xQvHBS6PDY9fAGAHkTbm0gAnEK2PWSTPoPs5UvD+sINKIbGfui9h55wDun2BLgnctP/3Phvdj93UCLv72Yt3kmusHOEzvOIC1fitYBkHu5nSOSQ3mWzW/d6KaLIqXZnxB3VIm5E8Zuw+DK0jztKDXK/GvTisdep478w3ufHSFi8psWKY9LmrAt3P/sr5UIRKB9MPIOMuyY6mtCw97+cI5Occ1kunFUL9PVOUWvTqQ3fY6/t4DNXY8X4V1EqF58bg3A+w=="
+ "sig": "IMygnWc4zrTFH1f3uDD8SZcRPAD9aiArh+bif9t8IbY+I5FBSb7LHFwqR9rKsNrqZGty1ol1jxpSJaraUX4xi2EG+XzsWaXlq8WYciFO83yknd0YdINff7mallUPM5VPBGI5O+Wm3r8zdwRlRrzrw6WJYo8BWW1t4SEGlivmOsIekfYOJg6k3xbcGw/o/+FTQ8KVP83SD2wusSNtZk/E8doWzHsCqXnkMLrsDuPx28qJGcytnpE3TZi53ZJIOZCEHCoXNtWh9O2iQem8e7X6XbLTv1vnUfURaaryFxijYIr5+qdOOfk++gn8pr9DtX4G5Iv0/x3yQOkG5GywZnbE2g=="
 }
