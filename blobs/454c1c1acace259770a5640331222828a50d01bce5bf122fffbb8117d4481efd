@@ -1013,3 +1013,12 @@ html.idle #wxfx,html.covered #wxfx,html.playing #wxfx{animation-play-state:pause
 .ai-mic.on{background:rgba(255,90,90,.3);border-color:rgba(255,90,90,.6)}
 .lk-wx{font-size:20px;color:rgba(255,255,255,.85);margin-top:4px}
 .pod-sum{white-space:pre-wrap;line-height:1.8;font-size:16px}
+
+.netd{appearance:none;color:var(--ink);text-align:right;font:inherit}
+.nd-head{display:flex;align-items:center;gap:14px}
+.nd-i.big{width:56px;height:56px;border-radius:16px}
+.nd-i.big svg{width:28px;height:28px}
+.nd-t{font-family:var(--f-display);font-size:22px}
+.nd-rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.nd-row{background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:14px;padding:10px 12px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.nd-row b{font-weight:500;overflow-wrap:anywhere}
