@@ -68,7 +68,12 @@ if(window.Uint8Array&&!Uint8Array.from)Uint8Array.from=function(a,f){return new 
     } else { v.src = src; play(); }
   }
   function start() { if (!startTs()) startHls(); }
-  v.addEventListener('playing', function () { w.style.display = 'none'; if (mode === 'ts' && mp) { mp.played = true; tsFails = 0; } });
+  var unT = 0;
+  function unmute() { if (!v.muted) { if (unT) { clearInterval(unT); unT = 0; } return; } try { v.muted = false; var r = v.play(); if (r && r.catch) r.catch(function () {}); } catch (e) {} }
+  v.addEventListener('playing', function () {
+    w.style.display = 'none'; if (mode === 'ts' && mp) { mp.played = true; tsFails = 0; }
+    if (v.muted && !unT) { unmute(); unT = setInterval(unmute, 2000); setTimeout(function () { if (unT) { clearInterval(unT); unT = 0; } }, 30000); }
+  });
   v.addEventListener('ended', again);
   // a picture that stops moving without an error: connect again
   var lastT = -1, still = 0;
