@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>لوحتي</title>
+<style>html,body{margin:0;height:100%;background:#000;overflow:hidden;cursor:none}video{position:fixed;top:0;left:0;width:100%;height:100%;object-fit:contain;background:#000}
+#w{position:fixed;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;color:#fff;font:600 34px system-ui,sans-serif}</style>
+</head><body><video id="v" autoplay playsinline></video><div id="w">…</div>
+<script>
+(function(){var S=String.prototype,A=Array.prototype;
+if(!S.includes)S.includes=function(s,i){return this.indexOf(s,i||0)!==-1;};
+if(!S.startsWith)S.startsWith=function(s,i){i=i||0;return this.substr(i,s.length)===s;};
+if(!S.endsWith)S.endsWith=function(s,n){var t=String(this);n=n===undefined?t.length:n;return t.substring(n-s.length,n)===s;};
+if(!A.find)A.find=function(f,t){for(var i=0;i<this.length;i++)if(f.call(t,this[i],i,this))return this[i];};
+if(!A.findIndex)A.findIndex=function(f,t){for(var i=0;i<this.length;i++)if(f.call(t,this[i],i,this))return i;return -1;};
+if(!A.includes)A.includes=function(x){return this.indexOf(x)!==-1;};
+if(!Array.from)Array.from=function(a,f){var r=[],i;if(a==null)return r;if(typeof a.length!=="number"&&typeof Symbol==="function"&&a[Symbol.iterator]){var it=a[Symbol.iterator](),s;while(!(s=it.next()).done)r.push(s.value);}else for(i=0;i<a.length;i++)r.push(a[i]);return f?r.map(function(x,j){return f(x,j);}):r;};
+if(!Object.assign)Object.assign=function(t){for(var i=1;i<arguments.length;i++){var s=arguments[i];if(s)for(var k in s)if(Object.prototype.hasOwnProperty.call(s,k))t[k]=s[k];}return t;};
+if(!Object.entries)Object.entries=function(o){return Object.keys(o).map(function(k){return[k,o[k]];});};
+if(window.Uint8Array&&!Uint8Array.from)Uint8Array.from=function(a,f){return new Uint8Array(Array.from(a,f));};
+})();
+</script>
+<script src="vendor/mpegts.js"></script>
+<script src="vendor/hls.min.js"></script>
+<script>
+(function () {
+  var km = /[?&]k=([^&]*)/.exec(location.search), k = km ? decodeURIComponent(km[1]) : '';
+  var v = document.getElementById('v'), w = document.getElementById('w');
+  var src = '/screen.m3u8?k=' + encodeURIComponent(k), hls = null;
+  function full() {
+    if (document.fullscreenElement || document.webkitFullscreenElement) return;
+    var e = document.documentElement, f = e.requestFullscreen || e.webkitRequestFullscreen;
+    try { var r = f && f.call(e); if (r && r.catch) r.catch(function () {}); } catch (x) {}
+  }
+  function play() { var r = v.play(); if (r && r.catch) r.catch(function () { v.muted = true; var r2 = v.play(); if (r2 && r2.catch) r2.catch(function () {}); }); }
+  var ts = '/screen.ts?k=' + encodeURIComponent(k), mp = null, chase = 0, tsFails = 0, mode = '', againT = 0;
+  function stopAll() {
+    clearInterval(chase); chase = 0;
+    if (mp) { var m = mp; mp = null; try { m.destroy(); } catch (e) {} }
+    if (hls) { var h = hls; hls = null; try { h.destroy(); } catch (e) {} }
+  }
+  // the tablet closed the stream (its encoder restarted, or the TV fell behind): connect again
+  function again() { stopAll(); clearTimeout(againT); againT = setTimeout(start, 1200); }
+  // fastest: one endless stream (well under a second behind); the segmented one if this TV can't
+  function startTs() {
+    if (tsFails >= 2) return false;
+    var ok = false;
+    try { ok = !!(window.mpegts && mpegts.isSupported && mpegts.isSupported() && mpegts.getFeatureList().mseLivePlayback); } catch (e) { ok = false; }
+    if (!ok) return false;
+    try {
+      var me = mpegts.createPlayer({ type: 'mpegts', isLive: true, url: ts }, { enableWorker: false, enableStashBuffer: false, stashInitialSize: 128, liveBufferLatencyChasing: true, liveBufferLatencyMaxLatency: 1.0, liveBufferLatencyMinRemain: 0.25, lazyLoad: false, autoCleanupSourceBuffer: true, autoCleanupMaxBackwardDuration: 6, autoCleanupMinBackwardDuration: 3 });
+      mp = me; mode = 'ts'; me.played = false;
+      me.attachMediaElement(v); me.load();
+      me.on(mpegts.Events.ERROR, function () { if (mp !== me) return; tsFails++; again(); });
+      play();
+      setTimeout(function () { if (mp === me && !me.played) { tsFails = 2; again(); } }, 8000);
+      // stay at the live edge
+      chase = setInterval(function () { try { var b = v.buffered; if (b.length && b.end(b.length - 1) - v.currentTime > 1.5) v.currentTime = b.end(b.length - 1) - 0.3; } catch (e) {} }, 3000);
+      return true;
+    } catch (e) { mp = null; tsFails++; return false; }
+  }
+  function startHls() {
+    mode = 'hls';
+    if (window.Hls && Hls.isSupported()) {
+      hls = new Hls({ liveSyncDurationCount: 1, liveMaxLatencyDurationCount: 3, maxLiveSyncPlaybackRate: 1.3, maxBufferLength: 4, backBufferLength: 0, manifestLoadingMaxRetry: 20, manifestLoadingRetryDelay: 500, levelLoadingRetryDelay: 500 });
+      var me = hls;
+      hls.loadSource(src); hls.attachMedia(v);
+      hls.on(Hls.Events.MANIFEST_PARSED, play);
+      hls.on(Hls.Events.ERROR, function (e, d) { if (hls !== me || !d.fatal) return; if (d.type === Hls.ErrorTypes.MEDIA_ERROR) me.recoverMediaError(); else again(); });
+    } else { v.src = src; play(); }
+  }
+  function start() { if (!startTs()) startHls(); }
+  v.addEventListener('playing', function () { w.style.display = 'none'; if (mode === 'ts' && mp) { mp.played = true; tsFails = 0; } });
+  v.addEventListener('ended', again);
+  // a picture that stops moving without an error: connect again
+  var lastT = -1, still = 0;
+  setInterval(function () {
+    if ((v.paused && !v.ended) || v.readyState === 0) { still = 0; return; }
+    if (v.currentTime !== lastT) { lastT = v.currentTime; still = 0; return; }
+    if (++still >= 5) { still = 0; again(); }
+  }, 2000);
+  document.addEventListener('keydown', function () { full(); v.muted = false; play(); });
+  document.addEventListener('click', function () { full(); v.muted = false; play(); });
+  start(); full();
+})();
+</script></body></html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>لوحتي</title>
+<style>html,body{margin:0;height:100%;background:#000;overflow:hidden;cursor:none}video{position:fixed;top:0;left:0;width:100%;height:100%;object-fit:contain;background:#000}
+#t{position:fixed;top:28px;right:40px;color:#fff;font:600 30px system-ui,sans-serif;text-shadow:0 2px 10px #000;transition:opacity .8s;opacity:0}#t.on{opacity:.92}
+#go{position:fixed;top:0;right:0;bottom:0;left:0;display:none;align-items:center;justify-content:center;color:#fff;font:600 34px system-ui,sans-serif;background:rgba(0,0,0,.5)}#go.on{display:flex}</style>
+</head><body><video id="v" autoplay playsinline></video><div id="t"></div><div id="go">اضغط OK للتشغيل</div>
+<script>
+(function(){var S=String.prototype,A=Array.prototype;
+if(!S.includes)S.includes=function(s,i){return this.indexOf(s,i||0)!==-1;};
+if(!S.startsWith)S.startsWith=function(s,i){i=i||0;return this.substr(i,s.length)===s;};
+if(!S.endsWith)S.endsWith=function(s,n){var t=String(this);n=n===undefined?t.length:n;return t.substring(n-s.length,n)===s;};
+if(!A.find)A.find=function(f,t){for(var i=0;i<this.length;i++)if(f.call(t,this[i],i,this))return this[i];};
+if(!A.findIndex)A.findIndex=function(f,t){for(var i=0;i<this.length;i++)if(f.call(t,this[i],i,this))return i;return -1;};
+if(!A.includes)A.includes=function(x){return this.indexOf(x)!==-1;};
+if(!Array.from)Array.from=function(a,f){var r=[],i;if(a==null)return r;if(typeof a.length!=="number"&&typeof Symbol==="function"&&a[Symbol.iterator]){var it=a[Symbol.iterator](),s;while(!(s=it.next()).done)r.push(s.value);}else for(i=0;i<a.length;i++)r.push(a[i]);return f?r.map(function(x,j){return f(x,j);}):r;};
+if(!Object.assign)Object.assign=function(t){for(var i=1;i<arguments.length;i++){var s=arguments[i];if(s)for(var k in s)if(Object.prototype.hasOwnProperty.call(s,k))t[k]=s[k];}return t;};
+if(!Object.entries)Object.entries=function(o){return Object.keys(o).map(function(k){return[k,o[k]];});};
+if(window.Uint8Array&&!Uint8Array.from)Uint8Array.from=function(a,f){return new Uint8Array(Array.from(a,f));};
+})();
+</script>
+<script src="vendor/hls.min.js"></script>
+<script>
+(function () {
+  // the TV's old browser (Chrome 38) has no URLSearchParams (audit-03-5)
+  var q = function (n) { var m = new RegExp('[?&]' + n + '=([^&]*)').exec(location.search); if (!m) return ''; try { return decodeURIComponent(m[1].replace(/\+/g, ' ')); } catch (e) { return m[1]; } };
+  var p = { get: q }, v = document.getElementById('v'), t = document.getElementById('t'), go = document.getElementById('go');
+  // a radio or any link that is not HLS plays in the page's own player, not through hls.js
+  var hlsWanted = p.get('m') === 'hls' || /m3u8/i.test(p.get('u') || ''), direct = false;
+  var src = '/p?k=' + encodeURIComponent(p.get('k') || '') + '&u=' + encodeURIComponent(p.get('u') || '') + (p.get('r') ? '&r=' + encodeURIComponent(p.get('r')) : '');
+  var tt = p.get('t') || ''; if (tt === 'null' || tt === 'undefined') tt = ''; t.textContent = tt; t.className = tt ? 'on' : ''; setTimeout(function () { t.className = ''; }, 4000);
+  var hls = null;
+  function start() {
+    if (hlsWanted && !direct && window.Hls && Hls.isSupported()) {
+      if (hls) hls.destroy();
+      hls = new Hls({ lowLatencyMode: false, maxBufferLength: 30, backBufferLength: 30 });
+      var me = hls;
+      hls.loadSource(src); hls.attachMedia(v);
+      hls.on(Hls.Events.ERROR, function (e, d) {
+        if (hls !== me || !d.fatal) return;
+        if (d.type === Hls.ErrorTypes.MEDIA_ERROR) { hls.recoverMediaError(); return; }
+        // not a playlist after all (a plain stream behind an m3u8-looking link): the page's own player
+        if (d.details === 'manifestParsingError') { direct = true; hls.destroy(); hls = null; v.src = src; play(); return; }
+        setTimeout(start, 3000);
+      });
+    } else { v.src = src; }
+    play();
+  }
+  v.addEventListener('error', function () { if (!hls) setTimeout(function () { v.src = src; play(); }, 3000); });
+  function play() { var r = v.play(); if (r && r.catch) r.catch(function () { go.className = 'on'; }); }
+  // the whole TV screen: no address bar, no browser frame (the browser allows it after a key press or a click)
+  function full() {
+    if (document.fullscreenElement || document.webkitFullscreenElement) return;
+    var el = document.documentElement, f = el.requestFullscreen || el.webkitRequestFullscreen || el.webkitRequestFullScreen;
+    try { var r = f && f.call(el); if (r && r.catch) r.catch(function () { try { v.webkitEnterFullscreen && v.webkitEnterFullscreen(); } catch (e) {} }); } catch (e) {}
+  }
+  function resume() { full(); go.className = ''; v.muted = false; play(); }
+  document.addEventListener('keydown', function () { resume(); });
+  document.addEventListener('click', resume);
+  document.addEventListener('mousemove', function () { full(); }, { once: true });
+  v.addEventListener('playing', function () { go.className = ''; });
+  start();
+  full();
+})();
+</script></body></html>
