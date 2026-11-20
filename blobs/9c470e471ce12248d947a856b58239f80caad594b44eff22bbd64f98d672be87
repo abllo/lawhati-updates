@@ -1,0 +1,175 @@
+/* design polish on top of app.css (owned by the design reviewer); loaded last.
+   rules: dark identity, existing tokens, no new blur layers on big areas, every motion pauses under html.saving */
+
+/* ---------- 1. the battery: the cap sits on the body, not 9px away from it ---------- */
+.batt .bt-cap{order:0;margin-inline-start:-4px}
+
+/* ---------- 2. bottom sheets: #ov.sheet was also caught by the shop's .sheet (z-index 5, padding 16, radius 24, rise) ---------- */
+#ov.ov.sheet{position:fixed;inset:0;z-index:20;padding:0;border-radius:0;animation:fadein .25s var(--ease);background:rgba(4,6,10,.5)}
+#ov.ov.sheet .sheet-panel{padding-bottom:env(safe-area-inset-bottom)}
+html.saving #ov.ov.sheet{animation:none}
+
+/* ---------- 3. a selected chip reads (the later .chip-btn.on rule dimmed the fill but kept the dark text) ---------- */
+.chip-btn.on{background:linear-gradient(180deg,var(--accent-2),var(--accent));color:var(--accent-ink);border-color:transparent;font-weight:600}
+
+/* ---------- 4. channel studio: the duration box stretched to 100% and pushed the row into the preview ---------- */
+.st-it .st-dur{width:58px;height:40px;padding:0 4px;flex:none}
+.st-it{min-height:58px;gap:8px}
+.st-it .ibtn{width:40px;height:40px;border-radius:12px}
+.st-it .x b{font-size:14.5px}
+.st-it .x .sub{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.st-it.on .x .sub{color:var(--accent)}
+
+/* ---------- 5. multi screens: names of the top cells sat under the page header (and its stop button) ---------- */
+.mv-grid .mv-cell:nth-child(-n+2) .mv-tag,.mv-grid.focus .mv-cell.f .mv-tag{top:72px}
+.mv-x{width:40px;height:40px}
+.mv-chip{height:40px}
+@media (orientation:portrait){
+  /* a tall narrow cell wastes the picture: in portrait the big one goes on top */
+  .mv-grid[data-n="2"]{grid-template-columns:1fr;grid-template-rows:1fr 1fr}
+  .mv-grid[data-n="3"]{grid-template-columns:1fr 1fr;grid-template-rows:3fr 2fr}
+  .mv-grid[data-n="3"] .mv-cell:first-child{grid-row:auto;grid-column:1 / -1}
+  .mv-grid[data-n="2"] .mv-cell:nth-child(2) .mv-tag,.mv-grid[data-n="3"] .mv-cell:nth-child(2) .mv-tag{top:12px}
+}
+
+/* ---------- 6. full-screen players: the header gets a soft scrim so it reads over a bright picture ---------- */
+.ov.full .ov-head::before{content:"";position:absolute;top:0;right:0;left:0;height:120px;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,0));pointer-events:none;z-index:-1;transition:opacity .4s}
+.ov.full.idle .ov-head::before{opacity:0}
+.ov.full .ov-head h2{text-shadow:0 1px 10px rgba(0,0,0,.6)}
+
+/* ---------- 7. «تم التحديث»: the list scrolls, the button is always in sight ---------- */
+.upd{overflow:hidden;animation:updIn .35s var(--ease) both}
+.upd > h3,.upd > .btn{flex:none}
+.upd ul{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding-inline-end:4px;padding-bottom:6px;-webkit-mask-image:linear-gradient(180deg,#000 calc(100% - 18px),transparent);mask-image:linear-gradient(180deg,#000 calc(100% - 18px),transparent)}
+.upd ul li::marker{color:var(--accent)}
+.upd .btn{min-width:140px}
+@keyframes updIn{from{opacity:0;transform:translateY(14px) scale(.98)}}
+html.saving .upd{animation:none}
+
+/* ---------- 8. the agent: no blank line under a markdown answer; the suggestions fade at the edge ---------- */
+.msg .txt.md{white-space:normal}
+.msg .txt.md p,.msg .txt.md li{white-space:pre-wrap}
+.ai-chips{-webkit-mask-image:linear-gradient(90deg,transparent,#000 28px);mask-image:linear-gradient(90deg,transparent,#000 28px);padding-inline-end:28px}
+.ai-chips .chip-btn{min-height:40px}
+
+/* ---------- 9. TV remote: the typing box had collapsed to 26px ---------- */
+.tvsec > .in-txt{flex:0 0 auto;height:48px}
+
+/* ---------- 10. the smart brief: labels in one aligned column instead of wrapping into three lines ---------- */
+.brief{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:10px 18px;align-items:baseline}
+.brief > .bl{display:contents}
+.brief > .bl > span:only-child{grid-column:1 / -1}
+.brief > :not(.bl){grid-column:1 / -1}
+.brief .bl b{max-width:190px}
+.brief-facts{padding-bottom:12px}
+
+/* ---------- 11. toast: dark glass like the rest of the app; it never sits on an input or a notice ---------- */
+.toast{background:rgba(16,20,30,.92);color:var(--ink);border:1px solid var(--line-2);box-shadow:0 14px 40px rgba(0,0,0,.45);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font-weight:500;padding:11px 22px}
+#ov:has(.ai-bar):not([hidden]) ~ .toast{bottom:150px}
+body:has(.notice.on) .toast{bottom:136px}
+
+/* ---------- 12. touch targets: nothing tappable under 40px ---------- */
+.btn.small{min-height:40px}
+.chip-btn{min-height:40px}
+.dk-q{height:40px}
+.timecol .dk-b{height:40px}
+.lm-b{width:40px;height:40px}
+.lt-cast,.lt-edit{width:40px;height:40px}
+.tag button{width:30px;height:30px;position:relative}
+.tag button::after,.card h3 .act::after,.yword .act::after,.sw-t::before{content:"";position:absolute;inset:-7px -5px}
+.card h3 .act,.yword .act{position:relative}
+.card h3 .act.icon::after,.yword .act::after{inset:-8px}
+.tick-track a{padding-block:12px;margin-block:-12px}
+.wxmini{padding-block:4px;margin-block:-4px}
+
+/* ---------- 13. the tools strip: a longer fade where it continues ---------- */
+.tools{-webkit-mask-image:linear-gradient(90deg,transparent,#000 44px,#000 calc(100% - 14px),transparent);mask-image:linear-gradient(90deg,transparent,#000 44px,#000 calc(100% - 14px),transparent)}
+
+/* ---------- 14. arrange mode: room under the last card so the floating bar never hides it ---------- */
+.scene.arranging{padding-bottom:96px}
+
+/* ---------- 15. channel tiles: a dark plate with gold letters when there is no logo (the white plate glared) ---------- */
+.ltile .lg:not(:has(img)){background:linear-gradient(150deg,rgba(var(--accent-rgb),.2),rgba(255,255,255,.04) 70%);box-shadow:inset 0 0 0 1px rgba(var(--accent-rgb),.18)}
+.ltile .lg:not(:has(img)) .ini{color:var(--accent-2);font-weight:500;letter-spacing:.02em}
+.mych-new .lg{background:rgba(255,255,255,.03)!important;box-shadow:inset 0 0 0 1.5px rgba(var(--accent-rgb),.35)!important}
+.mych-new .ini{color:var(--accent)}
+.ltile.dead .lg{filter:grayscale(1)}
+
+/* ---------- 16. «أنا»: the board's small greeting steps back while the page shows its own big one ---------- */
+#greet{transition:opacity .4s var(--ease)}
+html[data-scene="me"] #greet{opacity:0}
+
+/* ---------- 17. tools arrange: «تم» sits right under the strip being arranged, not at the far bottom ---------- */
+#toolsBar.arr-bar{top:calc(max(14px,env(safe-area-inset-top)) + 92px);bottom:auto}
+
+/* ---------- 18. settings: rows read as one list (hairlines), all small buttons line up ---------- */
+.set section .line + .line,.set section .line + .row{border-top:1px solid rgba(255,255,255,.055);padding-top:10px}
+.set section h4 + .line{border-top:0}
+.set .line > span:first-child{font-size:15px}
+
+/* ---------- 19. a stray «null» (Element.append given a null) was printed in the Box selection bar and the reader; text nodes collapse to 0 until the JS fix lands ---------- */
+.box-sel{font-size:0}
+.box-sel > b{font-size:16px;font-family:var(--f-display);min-width:28px;text-align:center}
+.reader{font-size:0}
+.reader > h1{font-size:28px}
+.reader > .rd-body{font-size:19px}
+.reader > .empty,.reader > .empty p{font-size:17px}
+
+/* ---------- 20. full-screen views (own channel, photo frame, light): fully clean when idle; a tap brings the controls back ---------- */
+.ov.full.idle .ov-head .close{opacity:0;pointer-events:none}
+.ov.full .ov-head .close{transition:opacity .4s}
+/* own channel: its controls float in the middle of the top edge, clear of the channel's own name and clock in the corners */
+#ov.full:has(.mych-play) .ov-head h2{display:none}
+#ov.full:has(.mych-play) .ov-head > .close + h2 + .ctrl{margin-inline-start:auto}
+#ov.full:has(.mych-play) .ov-head > .ctrl:last-child{margin-inline-end:auto}
+#ov.full:has(.mych-play) .ov-head{padding-inline-end:74px}
+#ov.full:has(.mych-play) .ov-head .ctrl{background:rgba(10,14,22,.62);border-color:var(--line-2);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+
+/* ---------- 21. photo frame with no photos: one «إضافة صور» in the middle, not two ---------- */
+#ov:has(.frame-empty) .frame-bar{display:none}
+#ov:has(.frame-empty) .ov-head .close{opacity:1;pointer-events:auto}
+
+/* ---------- 22. light scenes: the name stays readable on the pale swatch ---------- */
+.swatches .sw[data-id="warm"]{color:#4a3415;text-shadow:none}
+.swatches .sw{font-weight:600}
+
+/* ---------- 23. guests before the Wi-Fi password is set: a dark card, not a white slab with one button ---------- */
+.qrbox:not(:has(canvas)){background:var(--glass-2);border:1px solid var(--line-2);color:var(--ink);padding:30px 26px}
+.qrbox:not(:has(canvas)) .wifi{color:var(--muted)}
+
+/* ---------- 24. a notice over a full-screen view (channel, player, light, frame) drops from the top, clear of the ticker, the player controls and the light swatches ---------- */
+html.covered-full .notice{top:calc(max(14px,env(safe-area-inset-top)) + 64px);bottom:auto;transform:translate(-50%,-16px)}
+html.covered-full .notice.on{transform:translate(-50%,0)}
+
+/* ---------- 25. work calendar: the summary tiles share the row whatever their count (3 tiles left a hole and wrapped the third) ---------- */
+.ins{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.in-i{padding:11px 14px}
+
+/* ---------- 26. «أنا»: the greeting sits in the middle of its card; card actions rest on the card's floor ---------- */
+.greet-card{justify-content:center}
+#factCard .facts{flex:1;display:flex;flex-direction:column;gap:12px}
+#factCard .facts > .row:last-child{margin-top:auto}
+
+/* ---------- 27. the clock's colon breathes instead of blinking; it holds still in saving mode ---------- */
+.clock .colon{animation-timing-function:ease-in-out}
+html.saving .clock .colon{animation:none;opacity:.7}
+
+/* ---------- 28. TV remote numbers read 1 2 3 left to right, like the remote in his hand ---------- */
+.tvsec .remote.r5:has(+ .remote.r5){direction:ltr}
+
+/* ---------- 29. the one player in the time column: its buttons share the width evenly, like the quick buttons under it when idle ---------- */
+.timecol .dk-bs{gap:6px}
+.timecol .dk-b{max-width:none}
+
+/* ---------- 30. guard: deep.css names its page «.dp» (grid, 208px column), the same class as the TV remote's arrow keys; the remote keeps its own shape ---------- */
+.dpad > .dp{display:flex;grid-template-columns:none;gap:0;min-height:0;align-items:center;justify-content:center;padding:0}
+
+/* ---------- 31. bright day sky: the time column keeps its contrast (dark glass under the chips and the player, a soft shade behind the text) ---------- */
+.timecol .dates,.timecol .wxmini,.timecol .praybar,.greet{text-shadow:0 1px 12px rgba(0,0,0,.32)}
+.pchip,.mchip{background:rgba(var(--glass-rgb),.34)}
+.timecol .dock{background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02)),rgba(var(--glass-rgb),.38)}
+.timecol .dock.idle{background:rgba(var(--glass-rgb),.3)}
+html[data-phase="morning"] .timecol::before,html[data-phase="noon"] .timecol::before{content:"";position:absolute;inset:-14px -26px -14px -30px;background:radial-gradient(70% 60% at 55% 48%,rgba(4,10,24,.26),rgba(4,10,24,0) 78%);pointer-events:none;z-index:-1}
+
+/* ---------- 32. on the board, a notice rises above the news ticker instead of covering it ---------- */
+html:not(.covered) .notice{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 60px)}

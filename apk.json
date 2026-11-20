@@ -1,11 +1,11 @@
 {
- "code": 25,
- "name": "3.11",
- "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-25.apk",
- "sha256": "8711c48eef394d428e630b76d26015adfad76046b4611a81ae8e035ebfbcdf2a",
+ "code": 26,
+ "name": "3.12",
+ "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-26.apk",
+ "sha256": "3cbe29ce8aa27b97ff8fdf95979cd7dae638e4bd5691da038db6ac76b6c81d40",
  "notes": [
-  "إذا تحديث خرّب اللوحة ترجع لحالها لآخر نسخة اشتغلت",
-  "اللوحة ترجع تفتح لحالها لو انهارت صفحتها",
-  "التحديث ما يقطع البث، يستنى لين يخلص"
+  "إصلاح أمني: سيرفر البث ما يقرأ إلا الفيديو اللي اخترته",
+  "البث للتلفزيون يكمل لو رجعت اللوحة",
+  "نسخة تلقائية قبل كل تحديث، وأمر «رجوع» من الآيفون"
  ]
 }
