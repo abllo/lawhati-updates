@@ -1,10 +1,10 @@
 {
- "code": 31,
- "name": "3.17",
- "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-31.apk",
- "sha256": "b0783594f0e63d17dc7b2d637dcc1a14fcbbd91ddb0ff896c1fec036e910456c",
+ "code": 32,
+ "name": "3.18",
+ "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-32.apk",
+ "sha256": "85b91cacfe6738f9b820c31510fd39e46cbca520329f180db7bbdd5a0bf57ea7",
  "notes": [
-  "إصلاح أمني: إغلاق ثغرة كانت تتيح لإطار داخل الصفحة (مثل يوتيوب) الوصول لجسور الحافظة/الوسوم والقارئ بلا مفتاح (تسريب سرّ الاقتران وSSRF) — بوابة المفتاح + حارس عناوين للقارئ",
-  "الحافظة: زرّا «استقبال» و«رفض» لنص الآيفون يعملان (مع ويب 49)"
+  "إصلاح أمني: سدّ ثغرة SSRF متبقية في القارئ (كانت تسمح بعناوين IPv6 الداخلية/الحلقية)",
+  "يتضمّن كل إصلاحات أمان 3.17 (بوابات الجسر + حارس العناوين)"
  ]
 }
