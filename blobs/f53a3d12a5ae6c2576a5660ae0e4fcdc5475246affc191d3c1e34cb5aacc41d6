@@ -8,6 +8,8 @@
 <link rel="stylesheet" href="vendor/leaflet.css">
 <link rel="stylesheet" href="mych.css">
 <link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="deep.css">
+<link rel="stylesheet" href="polish.css">
 </head>
 <body>
 <div id="themeBg" aria-hidden="true"></div>
