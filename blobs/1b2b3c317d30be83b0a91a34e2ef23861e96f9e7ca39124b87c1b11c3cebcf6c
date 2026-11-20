@@ -178,3 +178,43 @@ html:not(.covered) .notice{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 6
 body:has(#lock:not([hidden])) .notice{left:auto;right:max(24px,env(safe-area-inset-right));top:max(20px,env(safe-area-inset-top));bottom:auto;transform:translateY(-12px);max-width:min(440px,42vw)}
 body:has(#lock:not([hidden])) .notice.on{transform:translateY(0)}
 body:has(#lock:not([hidden])) .toast{bottom:28px}
+
+/* ===================================================================
+   تطبيق الاتجاه المعتمد (الزجاج + bento) — اعتمده المالك 12:12.
+   هذه الطبقة تنفّذ ما يقدر عليه الـ CSS؛ إعادة الترتيب العميقة (bento،
+   بطاقة البطل، تجميع عمود الوقت، بطل البث) في طلبات company/requests.
+   كل شيء هنا ثابت أو يتوقف تحت html.saving، ولمس ≥ 40px، بلا نص/إيموجي.
+   =================================================================== */
+
+/* ---------- 34. تعديل المالك: «صباح الخير» تبقى على اليمين (بداية RTL) في كل الشاشات ---------- */
+/* لوحة #greet أصلاً يمين؛ بطاقة الترحيب في «أنا» كانت توسّط، فتُحاذى للبداية */
+.greet-card{align-items:flex-start;text-align:start}
+.greet-card .gt,.greet-card > .row{text-align:start;justify-content:flex-start}
+
+/* ---------- 35. بطل واضح لكل مشهد: شريط علوي أعرض وحلقة خفيفة بلون المشهد ---------- */
+#sceneWork .hero-card::before,#sceneMe .greet-card::before{height:3px;opacity:1}
+#sceneWork .hero-card,#sceneMe .greet-card{
+  box-shadow:0 16px 40px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(var(--sc-rgb),.16)}
+
+/* ---------- 36. أرقام متساوية العرض في كل لوحة بيانات (محاذاة نظيفة) ---------- */
+.clock,.praybar,.pb,.wxmini,.dates,.ins,.in-i,.stat,.hero,.calbody,.pchip,.mchip,.dk-row,.brief,.mts,.cd{
+  font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+
+/* ---------- 37. نقطتا الساعة بلمسة ذهبية (هوية)، وتهدأ تحت التوفير ---------- */
+.clock .colon{color:var(--accent-2)}
+html.saving .clock .colon{color:var(--accent-2);opacity:.7}
+
+/* ---------- 38. البث: الشبكة تتمركز فلا يبقى نصف فارغ حين تقلّ القنوات ---------- */
+.lgrid{grid-template-columns:repeat(auto-fit,minmax(150px,206px));justify-content:center}
+
+/* ---------- 39. بطل العمل: «الخروج المسموح» هو الرقم الأبرز، والحلقة أوضح ---------- */
+/* تبرز الرقم الأساسي فقط (بلا تغيير شبكة) لتسلسل أوضح كما في الاتجاه المعتمد */
+.hero .tile-s.exit-wait .tv,.hero .tile-s.exit-go .tv,.hero .tile-s.accent .tv{font-size:clamp(30px,2.9vw,44px)}
+.hero .ring{width:138px;height:138px}
+.tile-s{box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+
+/* ---------- 40. بطل العمل كـ bento: «حالة اليوم» شريط عريض فوق، والإحصاءات صفّاً تحته ---------- */
+.hero .stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+.hero .stats .status{grid-column:1 / -1}
+.hero .stats .status .tv{font-size:clamp(19px,1.8vw,24px)}
+@media (orientation:portrait){.hero .stats{grid-template-columns:repeat(2,minmax(0,1fr))}}

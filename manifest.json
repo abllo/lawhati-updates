@@ -1,19 +1,19 @@
 {
- "v": 41,
+ "v": 42,
  "base": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/blobs/",
  "files": {
   "app.css": "5ae5b560c5da35e81a22cc1729525f76c8e251c7a4b20f9590d120d0f8799fac",
-  "polish.css": "c68181010d4d53bab168e26cd242e4e9d2a75bee98ef2d4d51093ba0ff33b681",
-  "app.js": "ee1966a93f70d8f1d240918ea70db34a966540286eb3466b2f7a6bb39764f8e8",
+  "polish.css": "1b2b3c317d30be83b0a91a34e2ef23861e96f9e7ca39124b87c1b11c3cebcf6c",
+  "app.js": "d20f956bf27ecbdf865e3544d6460fed0464684946c88c9839fbbb94a502221f",
   "index.html": "618e713c778198348e433bb2ba4c8c1c6b0a4817c5deb26944cf7778d4e35042",
   "phone.html": "7b1abd0fe5fd28c2665e037c547b38b17a7684cebe49ba51a65e15223de346d6",
   "tvplay.html": "84d641b4cc8fff75492b427aad92269a2fb36d083e637315d80843001895894c",
   "deep.css": "26bed75399584712240cf666f7870d52cf07954e4c9de552a59e144505c94855",
-  "version.json": "9554a351f250a5cb09f9e438bf3b3b6f924e6db8778e722abe9d33034c0a9a2b",
+  "version.json": "df62fa5cc96763ab74a33ca226c7b321a9587c06188cd59586de7b36478dfeff",
   "mych.html": "4e4a78fc2ed84d7b46e0be0631d16c0238d5bbc45462ec6c8d11d0443a9b08b4",
-  "changes.json": "2cfa45ede71e8ae4224f22f84a66b51db0ae34d0d775a8aab9cac124cd98aaf8",
+  "changes.json": "9e4048a285035a475b8711921f4125a0765a1ab46dfac8013ee6487fa67f63ea",
   "screen.html": "70176907b3de5c97fd829111867b10512e2519e65f155b5009d4bc5c06ee6498",
-  "mych.js": "105630ce63961f8b932c86caa8a2618f39203cb035020bd8ba5a5d5c6fff5532",
+  "mych.js": "7b1c6d5ba4b986169bcce6e84964519c95e35170205b1c291b07e3831d620958",
   "mych.css": "68495fb15eff7e2b6ec15d78ef8cebfd6223c8cc2cef0a0cc042868a2fa2a105",
   "fonts/ibm-plex-sans-arabic-latin-600-normal.woff2": "63f4757271e403f7baec0862f284ffaa4560ea6096ba9fe8bc6e585ca656e724",
   "fonts/ibm-plex-sans-arabic-latin-500-normal.woff2": "be6a3b2e37f3ad67aa822a55ce356d28c416331c97530a1ec076c2118240ca2d",
@@ -31,5 +31,5 @@
   "vendor/mpegts.js": "e998f7a6cec5fcab56ac14e8c22d61a42565c1ebf7174b3fda078343eda6cab0",
   "vendor/leaflet.css": "a7837102824184820dfa198d1ebcd109ff6d0ff9a2672a074b9a1b4d147d04c6"
  },
- "sig": "WDAOWGq4s/YgSjo8TrWXKTQMEFRj2jh08bt++jlepsXOupEEzwv9Jih0bT1p7aBqYDy5u95XylUyGi8ishlmW/k2dEFG9bmeUZQ188tLf5/S7bwyJBVNmJnbG7e/MvfD1A2Tj4qFzr2Y9JRnytfBprH3jD4POa5vMFQj/8JtOXHQ8VIedw32kjqY0xYa0ju5gSDQEfJLOj5zJJhmVFh3bodI6lGhnh8TKvip3r+tNYRuy/b1+mqucmIFAg1qs/xnUjSqtQd+1RUW/pQ4g5LWYUR6REJWb3KiwZm7JOwLmpDrKErXUhpLFX/B64byxWtOg4CFXOxJiF+SH9Vz6e8sJw=="
+ "sig": "FwgFoOyVVUxzUHnO5S7ihu3BkKgkt5t3lv2tTkXwiuWSSrs+zHH+Q6Td47MalOXFBmJbBl04Mwkv13NEKjUhwWZX4D1u3aINOWxqK1cy/xEdYW9KMQc2YkgogzqkyBAoHaTU9DQ/uNKjnykhIaGEjf2k/eYMT58EtuHCUxVdJ5NZDZuij+IiwIGgblxQ6MGmMFJ2jKZFy9l3KjoISVlxRQh1hy4q/PTHhCbZ4f0dJqINKm4cCFYDIQvaJQT/CJ2hEhHT3jfmo5693vyxu2Twva6EH3wrzaI9N3JiKEwX+Iq9mGWzcRISm+b8g571XVq/vIH6cuEYVB10VzWxF7Oscg=="
 }
