@@ -173,3 +173,8 @@ html[data-phase="morning"] .timecol::before,html[data-phase="noon"] .timecol::be
 
 /* ---------- 32. on the board, a notice rises above the news ticker instead of covering it ---------- */
 html:not(.covered) .notice{bottom:calc(max(10px,env(safe-area-inset-bottom)) + 60px)}
+
+/* ---------- 33. on the lock screen a notice waits in the top corner, never over the keypad ---------- */
+body:has(#lock:not([hidden])) .notice{left:auto;right:max(24px,env(safe-area-inset-right));top:max(20px,env(safe-area-inset-top));bottom:auto;transform:translateY(-12px);max-width:min(440px,42vw)}
+body:has(#lock:not([hidden])) .notice.on{transform:translateY(0)}
+body:has(#lock:not([hidden])) .toast{bottom:28px}

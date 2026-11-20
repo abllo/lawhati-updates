@@ -2,6 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
+<meta name="lawha-key" content="1">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>لوحتي</title>
 <link rel="stylesheet" href="fonts/fonts.css">
@@ -52,6 +53,7 @@
 
 <div class="ov" id="ov" hidden></div>
 <div class="lockscr" id="lock" hidden tabindex="-1"></div>
+<script>try{if(localStorage.getItem('lawha:locked')==='true')document.getElementById('lock').hidden=false}catch(e){}</script>
 <div class="ambient" id="ambient" hidden></div>
 <div class="welcome" id="welcome" hidden></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
