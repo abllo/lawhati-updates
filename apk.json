@@ -1,10 +1,10 @@
 {
- "code": 32,
- "name": "3.18",
- "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-32.apk",
- "sha256": "85b91cacfe6738f9b820c31510fd39e46cbca520329f180db7bbdd5a0bf57ea7",
+ "code": 33,
+ "name": "3.19",
+ "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-33.apk",
+ "sha256": "be50445ca0f7b098f57f45e74112b603f84376cfc944b1b44470d065702b99b6",
  "notes": [
-  "إصلاح أمني: سدّ ثغرة SSRF متبقية في القارئ (كانت تسمح بعناوين IPv6 الداخلية/الحلقية)",
-  "يتضمّن كل إصلاحات أمان 3.17 (بوابات الجسر + حارس العناوين)"
+  "صمت اللوحي أثناء البث: صوت القناة يُسحب من داخل الصفحة بتقنية Web Audio فيبقى اللوحي صامتاً في وضع «التلفزيون» دون كتم التلفزيون (قنوات غير يوتيوب)",
+  "يوتيوب يبقى صوته على اللوحي (تعذّر تقنياً كتمه)"
  ]
 }
