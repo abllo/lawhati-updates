@@ -1,10 +1,11 @@
 {
- "code": 24,
- "name": "3.10",
- "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-24.apk",
- "sha256": "4a532f5b2844bdfbfe2e6a9aa5e9fcc5a717fe4e6a8b3e707919c4e556bb0f4e",
+ "code": 25,
+ "name": "3.11",
+ "url": "https://raw.githubusercontent.com/abllo/lawhati-updates/main/apk/Lawhati-25.apk",
+ "sha256": "8711c48eef394d428e630b76d26015adfad76046b4611a81ae8e035ebfbcdf2a",
  "notes": [
-  "مفاتيح Box من داخل التطبيق",
-  "صوت اللوحي ما يتغير وقت البث"
+  "إذا تحديث خرّب اللوحة ترجع لحالها لآخر نسخة اشتغلت",
+  "اللوحة ترجع تفتح لحالها لو انهارت صفحتها",
+  "التحديث ما يقطع البث، يستنى لين يخلص"
  ]
 }
