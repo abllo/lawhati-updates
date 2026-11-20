@@ -218,3 +218,17 @@ html.saving .clock .colon{color:var(--accent-2);opacity:.7}
 .hero .stats .status{grid-column:1 / -1}
 .hero .stats .status .tv{font-size:clamp(19px,1.8vw,24px)}
 @media (orientation:portrait){.hero .stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ---------- 41. البث: أول قناة في تبويب القنوات تصير بطاقة بطل 2×2 ---------- */
+/* CSS فقط، منطقته تبويب القنوات وحده (حيث تظهر شرائح التصنيف غير المخفية) */
+.ov-body:has(.cat-chips:not([hidden])) .lgrid{
+  grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(168px,auto);justify-content:stretch}
+.ov-body:has(.cat-chips:not([hidden])) .lgrid > .ltile:first-child{grid-column:span 2;grid-row:span 2}
+.ov-body:has(.cat-chips:not([hidden])) .lgrid > .ltile:first-child .lg{aspect-ratio:auto;flex:1 1 auto;min-height:0}
+.ov-body:has(.cat-chips:not([hidden])) .lgrid > .ltile:first-child .ini{font-size:44px}
+.ov-body:has(.cat-chips:not([hidden])) .lgrid > .ltile:first-child b{font-size:19px}
+@media (orientation:portrait){.ov-body:has(.cat-chips:not([hidden])) .lgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ---------- 42. عمود الوقت: بار الصلاة يصير بطاقة زجاجية خفيفة (تجميع إيقاعي) ---------- */
+.timecol .praybar{background:var(--glass);border:1px solid var(--line);border-radius:16px;padding:7px 6px 8px;
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
