@@ -277,3 +277,23 @@ html[data-phase="morning"] .vtabs button,html[data-phase="noon"] .vtabs button{t
    التحية بفاصل، والمشغّل يبعد عن الشريط الإخباري ~68px، ولا يخرج عن الشاشة).
    الطقس يبقى متاحاً في بطاقة مدن «المنزل». العمودي: التحية static أصلاً فلا تداخل. */
 .timecol .mchip,.timecol .wxmini{display:none}
+
+/* ---------- 52. الإعدادات بتبويبات (المظهر؛ المنطق في settings.js — طلب design-settings-tabs) ---------- */
+.set-tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;position:sticky;top:0;z-index:3;
+  padding:5px;margin:0 0 16px;background:var(--glass-2);border:1px solid var(--line);border-radius:16px;
+  -webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 16px,#000 calc(100% - 16px),transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 16px,#000 calc(100% - 16px),transparent)}
+.set-tabs::-webkit-scrollbar{display:none}
+.set-tab{flex:none;min-height:44px;padding-inline:18px;border-radius:12px;border:1px solid transparent;background:transparent;
+  color:var(--muted);font-family:var(--f-body);font-size:14px;font-weight:500;cursor:pointer;white-space:nowrap;
+  transition:color .2s var(--ease),background .2s var(--ease)}
+.set-tab:hover{color:var(--ink)}
+.set-tab.on{background:linear-gradient(180deg,var(--accent-2),var(--accent));color:var(--accent-ink)}
+.set-panels{position:relative;min-height:0}
+/* اللوحات غير النشطة تبقى في DOM وقابلة للوصول (position+opacity بدل display:none):
+   مخفية بصرياً وخارج التدفق، لكن عناصرها تبقى مستهدَفة للاختبار. اللوحة النشطة تحدّد الارتفاع. */
+.set-panel{display:flex;flex-direction:column;gap:14px;position:absolute;inset:0 0 auto 0;opacity:0;pointer-events:none}
+.set-panel.on{position:relative;opacity:1;pointer-events:auto;animation:fadein .25s var(--ease)}
+html.saving .set-panel.on{animation:none}
+.set-panel > section:first-child{margin-top:0}
