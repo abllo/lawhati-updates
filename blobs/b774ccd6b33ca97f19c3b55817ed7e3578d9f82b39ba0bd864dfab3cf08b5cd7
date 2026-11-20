@@ -23,6 +23,7 @@ if(window.Uint8Array&&!Uint8Array.from)Uint8Array.from=function(a,f){return new 
 <script>
 (function () {
   var km = /[?&]k=([^&]*)/.exec(location.search), k = km ? decodeURIComponent(km[1]) : '';
+  var sm = /[?&]snd=([^&]*)/.exec(location.search); sm = sm ? decodeURIComponent(sm[1]) : '';
   var v = document.getElementById('v'), w = document.getElementById('w');
   var src = '/screen.m3u8?k=' + encodeURIComponent(k), hls = null;
   function full() {
@@ -46,7 +47,7 @@ if(window.Uint8Array&&!Uint8Array.from)Uint8Array.from=function(a,f){return new 
     try { ok = !!(window.mpegts && mpegts.isSupported && mpegts.isSupported() && mpegts.getFeatureList().mseLivePlayback); } catch (e) { ok = false; }
     if (!ok) return false;
     try {
-      var me = mpegts.createPlayer({ type: 'mpegts', isLive: true, url: ts }, { enableWorker: false, enableStashBuffer: false, stashInitialSize: 128, liveBufferLatencyChasing: true, liveBufferLatencyMaxLatency: 1.0, liveBufferLatencyMinRemain: 0.25, lazyLoad: false, autoCleanupSourceBuffer: true, autoCleanupMaxBackwardDuration: 6, autoCleanupMinBackwardDuration: 3 });
+      var me = mpegts.createPlayer({ type: 'mpegts', isLive: true, url: ts }, { enableWorker: false, enableStashBuffer: false, stashInitialSize: 128, liveBufferLatencyChasing: true, liveBufferLatencyMaxLatency: 0.8, liveBufferLatencyMinRemain: 0.2, lazyLoad: false, autoCleanupSourceBuffer: true, autoCleanupMaxBackwardDuration: 6, autoCleanupMinBackwardDuration: 3 });
       mp = me; mode = 'ts'; me.played = false;
       me.attachMediaElement(v); me.load();
       me.on(mpegts.Events.ERROR, function () { if (mp !== me) return; tsFails++; again(); });
@@ -72,7 +73,8 @@ if(window.Uint8Array&&!Uint8Array.from)Uint8Array.from=function(a,f){return new 
   function unmute() { if (!v.muted) { if (unT) { clearInterval(unT); unT = 0; } return; } try { v.muted = false; var r = v.play(); if (r && r.catch) r.catch(function () {}); } catch (e) {} }
   v.addEventListener('playing', function () {
     w.style.display = 'none'; if (mode === 'ts' && mp) { mp.played = true; tsFails = 0; }
-    if (v.muted && !unT) { unmute(); unT = setInterval(unmute, 2000); setTimeout(function () { if (unT) { clearInterval(unT); unT = 0; } }, 30000); }
+    full();
+    if (sm !== 'tablet' && v.muted && !unT) { unmute(); unT = setInterval(unmute, 2000); setTimeout(function () { if (unT) { clearInterval(unT); unT = 0; } }, 30000); }
   });
   v.addEventListener('ended', again);
   // a picture that stops moving without an error: connect again

@@ -232,3 +232,48 @@ html.saving .clock .colon{color:var(--accent-2);opacity:.7}
 /* ---------- 42. عمود الوقت: بار الصلاة يصير بطاقة زجاجية خفيفة (تجميع إيقاعي) ---------- */
 .timecol .praybar{background:var(--glass);border:1px solid var(--line);border-radius:16px;padding:7px 6px 8px;
   -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+
+/* ===== تدقيق الجماليات (aesthetic-01): إصلاحات CSS آمنة ===== */
+
+/* ---------- 43. العمودي: بطل العمل لا يترك ثقباً — الإحصاءات الثلاث صفّ واحد (A1) ---------- */
+@media (orientation:portrait){.hero .stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .hero .stats .status{grid-column:1 / -1}
+  .hero .stats .tile-s .tv{font-size:clamp(20px,4.6vw,30px)}}
+
+/* ---------- 44. ريموت التلفزيون العمودي: مفاتيح الأرقام بعرض كامل ولمس ≥52px (A3) ---------- */
+.tvsec .remote.r5{width:100%}
+.tvsec .remote.r5 .k{min-width:52px;min-height:56px}
+
+/* ---------- 45. المنزلقات (صوت/سطوع/إضاءة/دفء): مساحة لمس ≥40px (A4) ---------- */
+input[type=range]{min-height:40px}
+
+/* ---------- 46. بطل البث 2×2 يُفعّل فقط مع 5 قنوات فأكثر، فلا ينهار مع القليل (B3) ---------- */
+/* يلغي تضخيم أول قناة حين تقلّ النتائج (تصفية/بحث) بإلغاء قاعدة 41 الشرطية */
+.ov-body:has(.cat-chips:not([hidden])) .lgrid:not(:has(> .ltile:nth-child(5))){
+  grid-template-columns:repeat(auto-fit,minmax(150px,206px));justify-content:center;grid-auto-rows:auto}
+.ov-body:has(.cat-chips:not([hidden])) .lgrid:not(:has(> .ltile:nth-child(5))) > .ltile:first-child{
+  grid-column:auto;grid-row:auto}
+.ov-body:has(.cat-chips:not([hidden])) .lgrid:not(:has(> .ltile:nth-child(5))) > .ltile:first-child .lg{aspect-ratio:16/10;flex:none}
+
+/* ---------- 47. الإضاءة: قص النقش داخل زاوية البلاطة، وهامش للاسم (B6) ---------- */
+.swatches .sw{overflow:hidden;padding-inline:8px}
+
+/* ---------- 48. اللوحة السفلية (الثيمات/الأصوات): زجاج كبقية النوافذ لا سطح معتم (B7) ---------- */
+.sheet-panel{background:var(--glass-2);-webkit-backdrop-filter:blur(24px) saturate(1.2);backdrop-filter:blur(24px) saturate(1.2)}
+
+/* ---------- 49. تباين: شارة «مباشر» ونصوص بطاقات العمل الثانوية فوق الحدّ (C7) ---------- */
+.live-badge{background:#D42823}
+#sceneWork .card{--faint:rgba(247,248,250,.58)}
+html[data-phase="morning"] .vtabs button,html[data-phase="noon"] .vtabs button{text-shadow:0 1px 10px rgba(0,0,0,.4)}
+
+/* ---------- 50. حبة التبويب النشط لا يفيض وهجها عن الشريط الجانبي (A2 جزئي) ---------- */
+.vtabs .tab-ink{box-shadow:0 4px 14px rgba(var(--accent-rgb),.22)}
+
+/* ---------- 51. بلاغ المالك: شريط المشغّل السفلي يرفع الساعة فتتداخل مع التحية ---------- */
+/* أفقي فقط: التحية مطلقة أعلى العمود، والمحتوى موسّط؛ فحين يكبر المشغّل يرتفع
+   المحتوى الموسّط داخل التحية. الحل: حين يعمل المشغّل، ثبّت المحتوى العلوي تحت
+   حيّز محجوز للتحية (المشغّل يمتدّ نزولاً، ولا يدفع الساعة للأعلى).
+   العمودي أصلاً التحية فيه static (app.css:837) فلا تداخل، فلا نلمسه. */
+@media (orientation:landscape){
+  .timecol:has(.dock:not(.idle)){justify-content:flex-start;padding-top:52px}
+}
