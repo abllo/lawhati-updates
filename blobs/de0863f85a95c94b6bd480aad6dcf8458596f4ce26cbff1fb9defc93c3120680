@@ -1416,3 +1416,9 @@ html.has-mini .lgrid{padding-bottom:250px}
 .box-f{display:flex;flex-direction:column;gap:6px}
 .box-f span{font-size:12.5px;color:var(--muted)}
 .box-f .row{display:flex;gap:8px}.box-f .row .in-txt{flex:1}
+/* YouTube quick-nav chip bar (feature yt-nav) — reuses .chip-btn/.chip-btn.on; adds the scrolling row + icon sizing. */
+.yt-nav{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:2px 0;margin:2px 0 2px}
+.yt-nav::-webkit-scrollbar{display:none}
+.yt-nav .chip-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 13px}
+.yt-nav .chip-btn svg{width:18px;height:18px;flex:none}
+.yt-nav .chip-btn span{white-space:nowrap}

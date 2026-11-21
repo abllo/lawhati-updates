@@ -95,9 +95,11 @@ body:has(.notice.on) .toast{bottom:136px}
 .mych-new .ini{color:var(--accent)}
 .ltile.dead .lg{filter:grayscale(1)}
 
-/* ---------- 16. «أنا»: the board's small greeting steps back while the page shows its own big one ---------- */
+/* ---------- 16. (معدّل بطلب المالك) التحية أعلى اليمين في كل المشاهد — تظهر في «أنا» أيضاً ---------- */
 #greet{transition:opacity .4s var(--ease)}
-html[data-scene="me"] #greet{opacity:0}
+#sceneMe .greet-card .gt{display:none}
+#sceneMe .greet-card{align-self:start;justify-content:flex-start}
+#sceneMe .greet-card .sub{margin-bottom:2px}
 
 /* ---------- 17. tools arrange: «تم» sits right under the strip being arranged, not at the far bottom ---------- */
 #toolsBar.arr-bar{top:calc(max(14px,env(safe-area-inset-top)) + 92px);bottom:auto}
@@ -192,8 +194,8 @@ body:has(#lock:not([hidden])) .toast{bottom:28px}
 .greet-card .gt,.greet-card > .row{text-align:start;justify-content:flex-start}
 
 /* ---------- 35. بطل واضح لكل مشهد: شريط علوي أعرض وحلقة خفيفة بلون المشهد ---------- */
-#sceneWork .hero-card::before,#sceneMe .greet-card::before{height:3px;opacity:1}
-#sceneWork .hero-card,#sceneMe .greet-card{
+#sceneWork .hero-card::before{height:3px;opacity:1}
+#sceneWork .hero-card{
   box-shadow:0 16px 40px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.12),0 0 0 1px rgba(var(--sc-rgb),.16)}
 
 /* ---------- 36. أرقام متساوية العرض في كل لوحة بيانات (محاذاة نظيفة) ---------- */
